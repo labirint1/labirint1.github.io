@@ -1,0 +1,1504 @@
+<!DOCTYPE HTML>
+  <head>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+  <script src="https://googledrive.com/host/0B0zTgDj4fTXrTV9ZM1BSSGROOWs"></script>
+
+
+    <script src="https://vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
+  <title>Пароль тренировка</title>
+
+      <style>
+          /*ОКНО С ПАРОЛЯМИ*/
+.dopLOM{position: relative;right: 50%;float: right;}
+.lom {
+    min-height: 80px;
+    min-width: 80px;
+    background: #D1B98B ;
+    position: relative;
+    right: -50%;
+    box-shadow: 0px 2px 7px #000000;
+    border-radius:5px;
+   font-family: 'Helvetica Neue',Helvetica,sans-serif;
+   padding:0px;
+*/
+}
+#LOM.six {
+  -webkit-transition: all 500ms cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+
+-webkit-transition-timing-function: cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+    /*transition:all 2.4s 0s;*/
+  width:660px;}
+
+
+.lom h2 {
+   font-size:14px;
+   margin: 16px 0 10px 0;
+   text-align:center;}
+.win-title {
+   margin-bottom:5px;
+   color: #554538;}
+
+/*========================================================================*/
+/*ВСПЛЫВАЮЩЕЕ ОКНО*/
+.dopPOP{position: relative;right: 50%;float: right;}/*выравнивание по центру*/
+#pop {
+    margin:-50px auto;
+    position:relative;
+    z-index:1;
+    width:230px;
+    height:100px;
+    background: #D1B98B;
+    box-shadow: 0px 2px 7px #000000;
+    border-radius:5px;
+    top: 210px;
+
+
+  /*
+  top: 210px;
+
+/  position:absolute;
+    width:230px;
+
+    background: #D1B98B;
+    box-shadow: 0px 2px 7px #000000;
+    border-radius:5px;
+   margin:auto auto;
+*/
+}
+
+
+
+ #pop h3 {
+
+
+   color: #554538;
+   font-size: 16px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+   text-decoration: none;
+ / margin: 9px 0 1px 0;
+   text-align:  center;}
+  #pop p{
+
+   color: #554538;
+   font-size: 11px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   margin: 14px 0 7px 0;
+   text-align:  center;}
+/*========================================================================*/
+/*КНОПКИ*/
+.txt1{width:100%;height:100%;background: url(https://googledrive.com/host/0B0zTgDj4fTXrYzlyamxXMWtMN0E) -19px  -19px; }
+.txt2{width:100%;height:100%;background: url(https://googledrive.com/host/0B0zTgDj4fTXrYzlyamxXMWtMN0E) -99px  -19px; }
+.txt3{width:100%;height:100%;background: url(https://googledrive.com/host/0B0zTgDj4fTXrYzlyamxXMWtMN0E) -179px -19px; }
+.txt4{width:100%;height:100%;background: url(https://googledrive.com/host/0B0zTgDj4fTXrYzlyamxXMWtMN0E) -19px  -99px; }
+.txt5{width:100%;height:100%;background: url(https://googledrive.com/host/0B0zTgDj4fTXrYzlyamxXMWtMN0E) -99px  -99px; }
+.txt6{width:100%;height:100%;background: url(https://googledrive.com/host/0B0zTgDj4fTXrYzlyamxXMWtMN0E) -179px -99px; }
+.txt7{width:100%;height:100%;background: url(https://googledrive.com/host/0B0zTgDj4fTXrYzlyamxXMWtMN0E) -19px  -179px;}
+.txt8{width:100%;height:100%;background: url(https://googledrive.com/host/0B0zTgDj4fTXrYzlyamxXMWtMN0E) -99px  -179px;}
+.txt9{width:100%;height:100%;background: url(https://googledrive.com/host/0B0zTgDj4fTXrYzlyamxXMWtMN0E) -179px -179px;}
+.pin {
+   min-height: 80px;
+    min-width: 80px;
+    background: #fff98B ;
+    display: block;
+    /overflow:hidden;
+  -webkit-transition: all 500ms cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+-webkit-transition-timing-function: cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+  /*transition:all 2.4s 0s;*/
+
+   margin:10px;
+   /width: 290px;
+   /height: 290px;
+   background: #B6965A;
+   border-style: solid;
+   border-color:  #B0965E;
+   border-width: 6px;
+   -moz-border-image: url(https://googledrive.com/host/0B0zTgDj4fTXrQ3I5TUZZOGo3MVE) 6 repeat;
+   -webkit-border-image: url(https://googledrive.com/host/0B0zTgDj4fTXrQ3I5TUZZOGo3MVE) 6 repeat;
+   -o-border-image: url(https://googledrive.com/host/0B0zTgDj4fTXrQ3I5TUZZOGo3MVE) 6 repeat;
+   border-image: url(https://googledrive.com/host/0B0zTgDj4fTXrQ3I5TUZZOGo3MVE) 6 fill repeat;
+   margin-bottom:10px;*/}
+#pin {
+   min-height: 80px;
+    min-width: 80px;
+    background: #fff98B ;
+    display: block;
+    /overflow:hidden;
+  -webkit-transition: all 500ms cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+-webkit-transition-timing-function: cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+  /*transition:all 2.4s 0s;*/
+
+   margin:10px;
+   /width: 290px;
+   /height: 290px;
+   background: #B6965A;
+   border-style: solid;
+   border-color:  #B0965E;
+   border-width: 6px;
+   -moz-border-image: url(https://googledrive.com/host/0B0zTgDj4fTXrQ3I5TUZZOGo3MVE) 6 repeat;
+   -webkit-border-image: url(https://googledrive.com/host/0B0zTgDj4fTXrQ3I5TUZZOGo3MVE) 6 repeat;
+   -o-border-image: url(https://googledrive.com/host/0B0zTgDj4fTXrQ3I5TUZZOGo3MVE) 6 repeat;
+   border-image: url(https://googledrive.com/host/0B0zTgDj4fTXrQ3I5TUZZOGo3MVE) 6 fill repeat;
+   margin-bottom:10px;*/}
+.pinThreeофф {
+  -webkit-transition: all 500ms cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+-webkit-transition-timing-function: cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+
+  /*
+  //transition:all 2.4s 0s;*/
+     width: 530px;
+   height: 530px;
+}
+
+.three{
+    -webkit-transition: all 500ms cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+-webkit-transition-timing-function: cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+   //background: #BBB65A;
+   overflow:hidden;
+   margin: 25px 25px 25px 25px;
+   width: 250px; /*чтоб не сужалось до 2 кнопок по ширине*/
+   height: 240px;
+
+}
+.six{
+    -webkit-transition: all 500ms cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+-webkit-transition-timing-function: cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+   overflow:hidden;
+   margin: 25px 25px 25px 25px;
+   width: 480px;
+   height: 480px;
+   //background: #BBB65A;
+}
+
+#1numThree{
+  //background: #BBB65A;
+  //display:none;
+  margin: 25px 25px 25px 25px;
+   width: 240px;
+   height: 240px;
+}
+
+
+#1numSix{
+   overflow:hidden;
+   width: 480px;
+   height: 480px;
+
+  position: relative
+
+    //display:none;
+
+
+
+}
+#numB.B{
+        display:none;
+   // overflow:hidden;
+  -webkit-transition: all 500ms cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition: all 500ms cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+-webkit-transition-timing-function: cubic-bezier(0.830, 0, 0.405, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+   -moz-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+     -o-transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265);
+        transition-timing-function: cubic-bezier(0.830, -0.195, 0.405, 1.265); /* custom */
+    margin: 25px 25px 25px -95px;
+
+}
+
+
+
+
+.button {
+   position: inherit;
+   background: #B6965A;
+   border: 1px outset #D3BA93;
+   background: #C2A164;
+   padding: 5px 11px;
+   box-shadow: 0px 1px 2px #000000;
+   color: #201809;
+   font-size: 11px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   margin: 5px 5px 5px 5px;
+   }
+.button:hover {
+   background: #d4b474;}
+.button:active {
+  border: 1px inset #d4b474;}
+.C {
+   text-align: center;
+   margin: 1px 0px 7px 0px;
+   width: 100%;
+   height: 32px;
+ /*  background: #f6965A;*/}
+
+.X {
+  top:6px;
+  position: relative;
+  left: 100%;
+  margin:8px 0px -28px -34px;
+  background: url(https://googledrive.com/host/0B0zTgDj4fTXrbmZ5VlJCQTlSSFE) 0px 0px no-repeat;
+  cursor:pointer;
+   width: 21px;
+   height: 21px;
+
+}
+.X:hover {
+  position: relative;
+  left: 100%;
+  margin:8px 0px -28px -34px;
+  background:url(https://googledrive.com/host/0B0zTgDj4fTXrbmZ5VlJCQTlSSFE) 0px -21px  no-repeat;
+  cursor:pointer;
+   width: 21px;
+   height: 21px;
+}
+.lin2{
+  border-bottom: 1px dashed #9C7B3D;
+     margin: -0px 10px -7px 10px;
+   height: 0px;}
+
+/*========================================================================*/
+/*НАСТРОЙКИ*/
+.option {
+  position:fixed;
+  bottom:90px;
+}
+.option DIV{background: #BBB65A;
+    	float:left;
+  position:;
+}
+
+
+/*========================================================================*/
+
+.none{
+   display:none;}
+
+
+
+.bord{
+  	float:left;
+    margin:10px 10px 10px 10px;
+    width:60px;
+  	height:60px;
+   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAIAAAC1nk4lAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo4MjZkZmY0ZS03NGJkLTc4NGQtYmZiZS03NDNjZWFlZGRkZGMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzA0NkNEMTc5OEY3MTFFM0EwOTQ5Rjk5OTZGMjRCQzUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzA0NkNEMTY5OEY3MTFFM0EwOTQ5Rjk5OTZGMjRCQzUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjJhODFmNWE5LWVjYTYtZjI0ZS1hMGI2LWFiYmVmN2JmMmE0ZiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4MjZkZmY0ZS03NGJkLTc4NGQtYmZiZS03NDNjZWFlZGRkZGMiLz4gPC9y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);
+
+}
+
+
+
+
+
+
+
+
+div.red{
+background: -moz-linear-gradient(top,  #df0019 0%, #680000 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#df0019), color-stop(100%,#680000));
+background: -webkit-linear-gradient(top,  #df0019 0%,#680000 100%);
+background: -o-linear-gradient(top,  #df0019 0%,#680000 100%);
+background: -ms-linear-gradient(top,  #df0019 0%,#680000 100%);
+background: linear-gradient(to bottom,  #df0019 0%,#680000 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#df0019', endColorstr='#680000',GradientType=0 );
+}
+.num{
+    background: -moz-linear-gradient(top,  #0098cb 0%, #003467 100%);  FF3.6+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0098cb), color-     stop(100%,#003467));
+    background: -webkit-linear-gradient(top,  #0098cb 0%,#003467 100%);
+    background: -o-linear-gradient(top,  #0098cb 0%,#003467 100%);
+    background: -ms-linear-gradient(top,  #0098cb 0%,#003467 100%);
+    background: linear-gradient(to bottom,  #0098cb 0%,#003467 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0098cb',   endColorstr='#003467',GradientType=0 );
+    width:42px;
+  	height:42px;
+	float:left;
+	margin:9px 8px 9px 9px;
+	-webkit-border-radius: 999px;
+    border-radius: 999px;
+	-moz-border-radius: 999px;
+	cursor:default;
+}
+div.red:hover{
+background: -moz-linear-gradient(top,  #c40000 0%, #680000 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c40000), color-stop(100%,#5e0101));
+background: -webkit-linear-gradient(top,  #c40000 0%,#5e0101 100%);
+background: -o-linear-gradient(top,  #c40000 0%,#5e0101 100%);
+background: -ms-linear-gradient(top,  #c40000 0%,#5e0101 100%);
+background: linear-gradient(to bottom,  #c40000 0%,#5e0101 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c40000', endColorstr='#5e0101',GradientType=0 );}
+.num:hover{
+ background: -moz-linear-gradient(top,  #0088b6 0%, #002b56 100%);  FF3.6+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0088b6), color-     stop(100%,#002b56));
+    background: -webkit-linear-gradient(top,  #0088b6 0%,#002b56 100%);
+    background: -o-linear-gradient(top,  #0088b6 0%,#002b56 100%);
+    background: -ms-linear-gradient(top,  #0088b6 0%,#002b56 100%);
+    background: linear-gradient(to bottom,  #0088b6 0%,#002b56 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0088b6',   endColorstr='#002b56',GradientType=0 );}
+
+.txt{
+    text-align:center;
+	margin-top:1px;
+    color:#ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 31px;
+/*    font-weight: bold;*/
+    text-shadow:0px 0px 1px rgba(0,0,0,0.7);
+}
+
+
+
+
+
+
+
+
+
+
+#pin-container {
+   margin: 25px 25px 25px 25px;
+   width: 240px;
+   height: 240px;
+   /* background: #BBB65A;*/}
+.num-container {
+    display:none;
+   position:relative;
+   margin: 0px 25px -265px 25px;
+   top:-0px;
+   width: 240px;
+   height: 240px;
+   /*background: #BBB65A;*/}
+
+
+
+.pin2 {
+   margin:auto;
+   width: 530px;
+   height: 530px;
+   background: #B6965A;
+   border-style: solid;
+  border-color:  #B0965E;
+   border-width: 6px;
+   -moz-border-image: url(https://googledrive.com/host/0B0zTgDj4fTXrQ3I5TUZZOGo3MVE) 6 repeat;
+   -webkit-border-image: url(https://googledrive.com/host/0B0zTgDj4fTXrQ3I5TUZZOGo3MVE) 6 repeat;
+   -o-border-image: url(https://googledrive.com/host/0B0zTgDj4fTXrQ3I5TUZZOGo3MVE) 6 repeat;
+   border-image: url(https://googledrive.com/host/0B0zTgDj4fTXrQ3I5TUZZOGo3MVE) 6 fill repeat;
+   margin-bottom:10px;}
+.lin{
+   margin: 16px 20px 10px 20px;
+   background: #9C7B3D;
+   height: 1px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* S O U N D */
+
+body {
+	background: #fff repeat top left;
+}
+
+
+
+section.SOUND {
+    bottom :20px;
+	width: 150px;
+	height: auto;
+	margin: 100px auto 0;
+    opacity: 0.3;
+	position: absolute ;
+    right :30px;
+     -webkit-transition: -webkit-all 3s 3s;
+	-moz-transition: -moz-all 3s 3s;
+    transition:all 3s 3s;
+}
+ section:hover{opacity: 1;
+    -webkit-transition: -webkit-all 0.7s ;
+	-moz-transition: -moz-all 0.7s ;
+    transition:all 0.7s ;
+
+ }
+#slider{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #333 #333 #777 #333;
+	border-radius: 25px;
+	width: 100px;
+	position: absolute;
+	height: 13px;
+	background-color: #8e8d8d;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAMAAADzN3VRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAH5QTFRFfHx+fXx+fX5/fn5/fn9/fn+Af3+AgH+AgICAgICBgICCgYCCgYGCgYKCgYKDgoKDg4KEg4OEg4SFhISFhYWFhYWGhoWGhoaGhoaHh4aGh4aHh4aIh4eHh4eIh4eJh4iIiIeIiIeJiIiIiIiJiImJiYiJiYmJiomJiomKioqKDkEz/QAAAbVJREFUGBkFwQGioygMAFA2szI61W2VktAUVvBLSO5/wXnPgYlR3e9Cyk+cOHHi9I6nOnWW6Gk2EsK186kvTXZR/LhCXti2Gu51ZFrMG6kfa/NO0CaGT/h8DVrEXV5j0WCaXbI5h/7BTTxuvfX/+lN7Lfjb6YZYoT16QqZtRBLavlATOb2msfRVM638qhsjgyWy+nA10H617C+QXW7dZR8nbzSRA6PPrkXn8tF4zxo1FrgeQ9wNJ3Cgqn8s8i8zKWNRwyDu6FDkW2zOGxJBg4bmedfiurznE3oZiDvG7vOUN/1fxdwyor4M665Bnj9NDjn4HgvvrtLbytIjBqTrhc/c8iKzLeaQi0XxVAdce/da9ckbYQdnkSIhEvpv4kuLFKm4amS3XkV2O+g5rg6y1Vfbz3gfNztcbdWUEb3E7jux54CqfriIgdvlxetMn5re8S0D2novLmtdlN6Hcl3rQpAhJ57ejG4qQWZB898DoZ8aNaJkh9FpYiRogEs+O0hpViAfBNl1C/ow30QfNOdFUCCHLvlfJ5Gm1vH1Eyg1Lh4nFJwQxMXW9cgHp/7u4Vw0aeJ/GFT+AqcKPTay5ahfAAAAAElFTkSuQmCC') repeat top left;
+    box-shadow: inset 0 1px 5px 0px rgba(0, 0, 0, .5),
+    				  0 1px 0 0px rgba(250, 250, 250, .5);
+    left: 20px;
+}
+.tooltip {
+	position: absolute;
+	display: block;
+	top: -25px;
+	width: 35px;
+	height: 20px;
+	color: #fff;
+	text-align: center;
+	font: 10pt Tahoma, Arial, sans-serif ;
+	border-radius: 3px;
+	border: 1px solid #333;
+    -webkit-box-shadow:  1px 1px 2px 0px rgba(0, 0, 0, .3);
+    box-shadow:  1px 1px 2px 0px rgba(0, 0, 0, .3);
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background: -moz-linear-gradient(top,  rgba(69,72,77,0.5) 0%, rgba(0,0,0,0.5) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(69,72,77,0.5)), color-stop(100%,rgba(0,0,0,0.5))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(69,72,77,0.5) 0%,rgba(0,0,0,0.5) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(69,72,77,0.5) 0%,rgba(0,0,0,0.5) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(69,72,77,0.5) 0%,rgba(0,0,0,0.5) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgba(69,72,77,0.5) 0%,rgba(0,0,0,0.5) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8045484d', endColorstr='#80000000',GradientType=0 ); /* IE6-9 */
+}
+.volume {
+	content: "";
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	right: -5px;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAABkCAYAAABzVZt8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAn9JREFUeNrt1stuElEYwPFvmIEZBqgNNuEFNMYVCaTd+QbGkrqyuNANZEgUyqWlLlnYCwUhMRAIsKy7SuUBbH0Bu+UZbMWCJi23zzM7E1uZMzNEQs6XzGJmFr+cuf45RIRpD8cQhswG4vV67RxnKZ2dfX05FcTn8z3gef6jbJcfnn455UxH/H7/C5fL9d7tdjskUYLDD4fGkeXlFXIQwWLhQRRtsOBaAI/HAxZBgPFoCPV63TgSDAbR4XCAJEnQ7w/A5XSBTbQSYATfzs+hVqsZR0KhMC4t3YXRGEG2SzAYDMHpkOHq+ho6nQ4Ui0XjSPR1FGWnExbvLIB6XiCXSQXGwxFcfL8wB1l/to68wJOzHEg2Eex2GdSVXfX78OtnzxyETOXPnVarde/k88kjwSpYu90ulMtl8x9hMivtdvtVqVR63Ov1FhuNxlQQdTyXPy43cvnc00wmc39aiDoi2Z6TrT5NRNcwhCEMYcjcIyzuZj/uVgMBPG42J4KG4k5RFNRSLobiLhQKYbVa1YdQxJ3aZ2FdCLC4MwFRh8UdQxjCEIb8N2T+4+7JagA/Hd+eRqbEXSQSQfJrpkNo4y4Wi2OhkKdDaOMumUzhwUGWDqGNu2gshsVCgQ6hjbutrW3c29uhQ4Ay7hRy48u0N/6GmRR3/8xVFndUwxCGMIQhc49MirvA2ho2j47++nmZGnfhcBgrlYo+RGvcRaMkKIoFbYjeuIsnEpjP5bQheuMumSL9lc1qQ/TG3UY8ge/yGleiN+7S6W3c3d3RhuiNu9TmJmb39zU/Xbri7raSNDXu0uk35HK91f8ygoa4UxSyonLJEKLOpLi7MVdn7wPJkPlBfgNRK1VmvAI1rgAAAABJRU5ErkJggg==') no-repeat 0 -50px;
+	position: absolute;
+	margin-top: -5px;
+}
+.ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABH5JREFUeNrlVV1oW2UYfk/OT/568tfWJsIUHVsbiqj4Q3UqXok4vVjXQWkHIoPS6kXrRVVsC21s7VBHL2bnbmZRtBZ0peDN2LwQ1G1Wd1MpG0M3nNCkaZM0OfltTxKf9/RE2i4VB+KNJzxw8uXN+3zP97zv+wn0HzzC/4aEf7cBDwD3AR6gBkgDa8BN4BcgD5TvlITXReBAIBA4EAq982jLEy3B+ro6v8vl9mhaam01FotcvnTp6uDg4M/hcPgHxDKK1ciEXQh4t8+MjIy09fX1HRZFSc1kMpROpymbzZHqUsnj8ZDdZqd8PqtNTEycHR4e/gr/+Q7QdhIJVQhk4LmZmZmetra2F3RdNxIzSUrTKJfLk9vtptraWrIqCgkWIosg0Nzc3Ln29vZJ/Pc8sLGVaCeJBDw1Pj5+rL+//2ipVKJyuUyFQoGSSY1i8TilUhr5GxroLkASBdrYWDdibFB14sQHnw4NDU0hx/eAXo2E313w4LXFxcU3rFarW8AORVGkYrGIo8pQNLpC8XiC7rl3D/l8PtI3NgwSjrHb7XjXk8Fg03vwiBWlKmqEHSpaPjp9+vXOzs7WPI5FkiVSZJkkSSI+tkhkmZaWItQUbCJFkSmXzZCM31mFJMkkSiJNfXxmtqurawK5LlfUbCXhUj0CFYMej3f/OnbJO1SMJFbAZhzVtWvX6aGHH6RMWjOS26BAwKdcLhlJbt36/XpjY+MoXr80S3sbiQq8HI1G38WRqMVSkQS4yqbKMNjpcKCi3DQ/f4X27bufPF4flUtl0os6lRBbKoJEMOg0r9f7NnJ9YlbaNhJutFew2/dv3LgpspnVnoaG+qrrHM8egqAIf/qxNGU27DYSH9C5vLw8Fo5E1RLMFixQAogWwfDF6XRSPLFGHpSw3WEjrj6OYwIGx+JYNRTFAHJ9DsSrKWldWFh4U1Zs+wv5vOGJDPO5AKyKlVBxFIb5uVyOAn6/QWSowLHx8UqIj8VivwaDweNYngUS1Tx5enJy8tihQ62tK6urqCAFxitGJckyN55gVFgymUJDugxFVhQFP6zK6XTQF9PTs93d3We2dP9t1bXH7/cfgZq3tHRa1fWi0dWKVcEuN8t4ZTVGybWksabW1Bj9ofwVY9Gam5uPo0+4sv6oVl2S6cuzo6OjL/X0vHpUwxjhipHNHigU1imRSBhKeOe8AQd271JVqq3z0YcnT342MDDwNXJ8a/pxW5/wuwMIMNH09PThgwdffD6fLxgKYC3mVxYdHzdIeAqwR1xtDRgx31w4f66jo+OsSRAGstU6vqKGveG747FQKPRkb29vK9TU8GBMITnPL55l3Ol1GJJerzs9eerU7Mjw8EX85yfavGO03WZX5TtPYZep6BHMsrvHxsYeb2nBfVJfH4AHKqaxFglHwvPzP17FiJ+PRCJLiL1iKuCZ9bdTeCuRE6g1yfYCbtq8yAQzAV9QSeA3M3kMyOwk2I2kss4JrSZZjQn+buGKBQq0eQ2nzeQFuoObsRqZZKqTtijRzV3ruyX/pyT/yvMnMmHYKfxKilQAAAAASUVORK5CYII=') no-repeat 50% 50%;
+	font-weight: bold;
+	color: #1C94C4;
+	outline: none;
+	top: -7px;
+	margin-left: -12px;
+}
+.ui-slider-range {
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #eaeaea 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#eaeaea)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* IE10+ */
+	background: linear-gradient(top,  #ffffff 0%,#eaeaea 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 ); /* IE6-9 */
+	position: absolute;
+	border: 0;
+	top: 0;
+	height: 100%;
+	border-radius: 25px;
+}
+
+
+
+/*NAV*/
+section.NAV {
+
+    bottom :0px;
+	/width: 150px;
+	height: auto;
+	//margin: 100px auto 0;
+    opacity: 0.2;
+	position: absolute ;
+    left :0px;
+    -webkit-transition: -webkit-all 3s 3s;
+	-moz-transition: -moz-all 3s 3s;
+    transition:all 3s 3s;
+}
+section.NAV:hover {
+
+    -webkit-transition: -webkit-all 0.7s ;
+	-moz-transition: -moz-all 0.7s ;
+    transition:all 0.7s ;
+    opacity: 1;
+
+}
+
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+nav a {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+	position: relative;
+	display: inline-block;
+	margin: 15px 25px;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	font-size: 1em;
+}
+
+
+
+/* Effect 10: reveal, push out */
+.cl-effect-10  {
+	position: relative;
+	z-index: 1;
+}
+
+.cl-effect-10 a {
+	overflow: hidden;
+	margin: 0 15px;
+}
+
+.cl-effect-10 a span {
+	display: block;
+	padding: 7px 11px;
+	background: #9C7B3D;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.cl-effect-10 a::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	padding: 10px 20px;
+	width: 100%;
+	height: 100%;
+	background: #FFF;
+	color: #9C7B3D;
+	content: attr(data-hover);
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transform: translateX(-25%);
+}
+
+.cl-effect-10 a:hover span,
+.cl-effect-10 a:focus span {
+	-webkit-transform: translateX(100%);
+	-moz-transform: translateX(100%);
+	transform: translateX(100%);
+}
+
+.cl-effect-10 a:hover::before,
+.cl-effect-10 a:focus::before {
+	-webkit-transform: translateX(0%);
+	-moz-transform: translateX(0%);
+	transform: translateX(0%);
+}
+
+
+    </style>
+  <META content="text/html; charset=utf-8" http-equiv="Content-Type">
+</head>
+  <body>
+    <div id="pop" class="none">
+      <div class="X" onclick="hide()"></div><p><big><big>Сообщение</big></big></p>
+      <div class="lin2"></div><p>Поздравляем, вы решили головоломку!</p>
+      <div class="C"><a href='#'class="button" id="button2" onclick="shuffle();hide()">ЕЩЁ РАЗ</a></div>
+    </div>
+    <div class="dopLOM"><div id="LOM" class="lom">
+      <div class="X" onclick="sendwallpost('Серёженька, I LOVE YOU')"></div>
+      <div class="win-title"><h2>Пароль тренировка</h2></div>
+      <div class="lin"> </div>
+      <div id="pin" class="pinSixoff">
+        <div id="num-blok" class="three">
+          <div id="numSix" class="none">
+            <div class="bord" onclick="klikB1();popSix()"><div id="b1" class="num"></div></div>
+            <div class="bord" onclick="klikB2();popSix()"><div id="b2" class="num"></div></div>
+            <div class="bord" onclick="klikB3();popSix()"><div id="b3" class="num"></div></div>
+            <div class="bord" onclick="klikB4();popSix()"><div id="b4" class="num"></div></div>
+            <div class="bord" onclick="klikB5();popSix()"><div id="b5" class="num"></div></div>
+            <div class="bord" onclick="klikB6();popSix()"><div id="b6" class="num"></div></div>
+            <div class="bord" onclick="klikB7();popSix()"><div id="b7" class="num"></div></div>
+            <div class="bord" onclick="klikB8();popSix()"><div id="b8" class="num"></div></div>
+            <div class="bord" onclick="klikB9();popSix()"><div id="b9" class="num"></div></div>
+            <div class="bord" onclick="klikB10();popSix()"><div id="b10" class="num"></div></div>
+            <div class="bord" onclick="klikB11();popSix()"><div id="b11" class="num"></div></div>
+            <div class="bord" onclick="klikB12();popSix()"><div id="b12" class="num"></div></div>
+            <div class="bord" onclick="klikB13();popSix()"><div id="b13" class="num"></div></div>
+            <div class="bord" onclick="klikB14();popSix()"><div id="b14" class="num"></div></div>
+            <div class="bord" onclick="klikB15();popSix()"><div id="b15" class="num"></div></div>
+            <div class="bord" onclick="klikB16();popSix()"><div id="b16" class="num"></div></div>
+            <div class="bord" onclick="klikB17();popSix()"><div id="b17" class="num"></div></div>
+            <div class="bord" onclick="klikB18();popSix()"><div id="b18" class="num"></div></div>
+            <div class="bord" onclick="klikB19();popSix()"><div id="b19" class="num"></div></div>
+            <div class="bord" onclick="klikB20();popSix()"><div id="b20" class="num"></div></div>
+            <div class="bord" onclick="klikB21();popSix()"><div id="b21" class="num"></div></div>
+            <div class="bord" onclick="klikB22();popSix()"><div id="b22" class="num"></div></div>
+            <div class="bord" onclick="klikB23();popSix()"><div id="b23" class="num"></div></div>
+            <div class="bord" onclick="klikB24();popSix()"><div id="b24" class="num"></div></div>
+            <div class="bord" onclick="klikB25();popSix()"><div id="b25" class="num"></div></div>
+            <div class="bord" onclick="klikB26();popSix()"><div id="b26" class="num"></div></div>
+            <div class="bord" onclick="klikB27();popSix()"><div id="b27" class="num"></div></div>
+            <div class="bord" onclick="klikB28();popSix()"><div id="b28" class="num"></div></div>
+            <div class="bord" onclick="klikB29();popSix()"><div id="b29" class="num"></div></div>
+            <div class="bord" onclick="klikB30();popSix()"><div id="b30" class="num"></div></div>
+            <div class="bord" onclick="klikB31();popSix()"><div id="b31" class="num"></div></div>
+            <div class="bord" onclick="klikB32();popSix()"><div id="b32" class="num"></div></div>
+            <div class="bord" onclick="klikB33();popSix()"><div id="b33" class="num"></div></div>
+            <div class="bord" onclick="klikB34();popSix()"><div id="b34" class="num"></div></div>
+            <div class="bord" onclick="klikB35();popSix()"><div id="b35" class="num"></div></div>
+            <div class="bord" onclick="klikB36();popSix()"><div id="b36" class="num"></div></div>
+          </div>
+          <div id="numThree">
+            <div class="bord" onclick="klikA1()"><div id="n1" class="num"><div class="txt1"></div></div></div>
+            <div class="bord" onclick="klikA2()"><div id="n2" class="num"><div class="txt2"></div></div></div>
+            <div class="bord" onclick="klikA3()"><div id="n3" class="num"><div class="txt3"></div></div></div>
+            <div class="bord" onclick="klikA4()"><div id="n4" class="num"><div class="txt4"></div></div></div>
+            <div class="bord" onclick="klikA5()"><div id="n5" class="num"><div class="txt5"></div></div></div>
+            <div class="bord" onclick="klikA6()"><div id="n6" class="num"><div class="txt6"></div></div></div>
+            <div class="bord" onclick="klikA7()"><div id="n7" class="num"><div class="txt7"></div></div></div>
+            <div class="bord" onclick="klikA8()"><div id="n8" class="num"><div class="txt8"></div></div></div>
+            <div class="bord" onclick="klikA9()"><div id="n9" class="num"><div class="txt9"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="C"><a href='#'class="button" id="button" onclick="shuffle()">ПЕРЕМЕШАТЬ</a></div>
+    </div></div>
+
+   <!-- <div class="option">
+      <div><a href='#'class="button" onclick="three()">МАЛЕНЬКИЕ 3X3</a></div>
+      <div><a href='#'class="button" onclick="six();clearTimeout(pauza)">БОЛЬШИЕ 6X6</a></div>
+      <div><a href='#'class="button" onclick="soundOff()">ЗВУК</a></div>
+      <div><a href='#'class="button" onclick="friend()">РАССКАЗАТЬ ДРУЗЬЯМ</a></div>
+      <div><a href='#'class="button" onclick="noPop()">НЕ ПОКАЗЫВАТЬ </a></div>
+    </div> -->
+<section class="SOUND">
+  <span class="tooltip"></span> <!-- Tooltip -->
+  <div id="slider"></div> <!-- the Slider -->
+  <span class="volume"></span> <!-- Volume -->
+</section>
+<section class="NAV">
+  <nav class="cl-effect-10">
+    <a href="#" data-hover="6X6" onclick="six()"><span>БОЛЬШИЕ</span></a>
+    <a href="#" data-hover="3X3"onclick="three()"><span>МАЛЕНЬКИЕ</span></a>
+  </nav>
+</section>
+  <script>
+
+/*ололо
+  VK.callMethod("resizeWindow", 627, 477);
+
+  /*
+  ВК
+    VK.init(function() {
+
+
+
+
+     //VK.callMethod("resizeWindow", 510, 600);
+  }, function() {
+    //VK.callMethod("resizeWindow", 510, 600);
+}, '5.11');
+*/
+
+
+
+
+
+   /* VK.init({
+        apiId: 4190522 // id созданного вами приложения вконтакте
+    });*/
+
+
+
+
+
+
+
+
+
+
+
+
+    function sendwallpost(mydata) {
+        VK.api("wall.post", {
+            owner_id: '31905868',
+			attachments : 'photo31905868_303064651,photo31905868_311100538',
+            message: mydata
+        }, function (data) {});
+    }
+function X(){
+
+
+
+//VK.callMethod("showInviteBox");
+}
+
+
+
+
+
+function three(){
+                 hide()
+                 document.getElementById('num-blok').className="three"
+        function func() {
+                         VK.callMethod("resizeWindow", 627, 477);
+						 //VK.callMethod("showInviteBox");
+						 VK.callMethod("setLocation","Маленькие пароли", 0);
+                         document.getElementById('numSix').className="none"
+                         document.getElementById('numThree').className=""}
+                         setTimeout(func, 400);}
+function six(){
+VK.callMethod("setLocation","Большие пароли", 0);
+VK.callMethod("resizeWindow", 627, 702);
+ //$.ionSound.play("pin");
+    hide()
+    document.getElementById('num-blok').className="six"
+
+    document.getElementById('numSix').className=""
+    document.getElementById('numThree').className="none"
+}
+/*ололо*/
+
+
+function hide(){document.getElementById('pop').className="none"}
+function popTree(){
+      $.ionSound.play("pin");
+      var nums = document.getElementById('numThree').getElementsByClassName('red').length;
+      if ( nums == 9) {
+      //document.getElementById('pop').classList.toggle("none");
+      document.getElementById('pop').className=""}
+   //var lom = 'three'
+  alert(lom);
+}
+
+
+function popSix(){
+     $.ionSound.play("pin");
+      var nums = document.getElementById('numSix').getElementsByClassName('red').length;
+      if ( nums == 36) {
+      document.getElementById('pop').classList.toggle("none");}
+   //var lom = 'three'
+//alert(nums);
+}
+
+function shuffle(){
+
+  var i = 1;
+  var timer = setInterval(function() {
+    document.getElementById('n' + Math.floor(Math.random()*9 + 1)).classList.toggle("red");
+    i++
+    //alert(i)
+    if (i == 20) {clearInterval(timer);}},30);
+  /*var j = 1;
+  var timers = setInterval(function() {
+    document.getElementById('b' + Math.floor(Math.random()*36 + 1)).classList.toggle("red");
+    document.getElementById('b' + Math.floor(Math.random()*36 + 1)).classList.toggle("red");
+
+    j++
+    //alert(i)
+    if (j == 25) {clearInterval(timers);}},60);*/
+
+var j = 1;
+ var timers = setInterval(function() {
+var rand=Math.floor(Math.random()*36 + 1) ;
+if (rand == 1) {
+  klikB1();
+} else if (rand == 2) {
+  klikB2();
+} else if (rand == 3) {
+  klikB3();
+} else if (rand == 4) {
+  klikB4();
+} else if (rand == 5) {
+  klikB5();
+} else if (rand == 6) {
+  klikB6();
+} else if (rand == 7) {
+  klikB7();
+} else if (rand == 8) {
+  klikB8();
+} else if (rand == 9) {
+  klikB9();
+} else if (rand == 10) {
+  klikB10();
+} else if (rand == 11) {
+  klikB11();
+} else if (rand == 12) {
+  klikB12();
+} else if (rand == 13) {
+  klikB13();
+} else if (rand == 14) {
+  klikB14();
+} else if (rand == 15) {
+  klikB15();
+} else if (rand == 16) {
+  klikB16();
+} else if (rand == 17) {
+  klikB17();
+} else if (rand == 18) {
+  klikB18();
+} else if (rand == 19) {
+  klikB19();
+} else if (rand == 20) {
+  klikB20();
+} else if (rand == 21) {
+  klikB21();
+} else if (rand == 22) {
+  klikB22();
+} else if (rand == 23) {
+  klikB23();
+} else if (rand == 24) {
+  klikB24();
+} else if (rand == 25) {
+  klikB25();
+} else if (rand == 26) {
+  klikB26();
+} else if (rand == 27) {
+  klikB27();
+} else if (rand == 28) {
+  klikB28();
+} else if (rand == 29) {
+  klikB29();
+} else if (rand == 30) {
+  klikB30();
+} else if (rand == 31) {
+ klikB31();
+} else if (rand == 32) {
+  klikB32();
+} else if (rand == 33) {
+  klikB33();
+} else if (rand == 34) {
+  klikB34();
+} else if (rand == 35) {
+  klikB35();
+} else {
+  klikB36();
+}
+   j++
+    //alert(j)
+    if (j == 40) {clearInterval(timers);}},40);
+
+}
+
+
+function shuffleB(){
+ var j = 1;
+ var timers = setInterval(function() {
+var rand=Math.floor(Math.random()*36 + 1)
+if (rand == 1) {
+  klikB1();
+} else if (rand == 2) {
+  klikB2();
+} else if (rand == 3) {
+  klikB3();
+} else if (rand == 4) {
+  klikB4();
+} else if (rand == 5) {
+  klikB5();
+} else if (rand == 6) {
+  klikB6();
+} else if (rand == 7) {
+  klikB7();
+} else if (rand == 8) {
+  klikB8();
+} else if (rand == 9) {
+  klikB9();
+} else if (rand == 10) {
+  klikB10();
+} else if (rand == 11) {
+  klikB11();
+} else if (rand == 12) {
+  klikB12();
+} else if (rand == 13) {
+  klikB13();
+} else if (rand == 14) {
+  klikB14();
+} else if (rand == 15) {
+  klikB15();
+} else if (rand == 16) {
+  klikB16();
+} else if (rand == 17) {
+  klikB17();
+} else if (rand == 18) {
+  klikB18();
+} else if (rand == 19) {
+  klikB19();
+} else if (rand == 20) {
+  klikB20();
+} else if (rand == 21) {
+  klikB21();
+} else if (rand == 22) {
+  klikB22();
+} else if (rand == 23) {
+  klikB23();
+} else if (rand == 24) {
+  klikB24();
+} else if (rand == 25) {
+  klikB25();
+} else if (rand == 26) {
+  klikB26();
+} else if (rand == 27) {
+  klikB27();
+} else if (rand == 28) {
+  klikB28();
+} else if (rand == 29) {
+  klikB29();
+} else if (rand == 30) {
+  klikB30();
+} else if (rand == 31) {
+ klikB31();
+} else if (rand == 32) {
+  klikB32();
+} else if (rand == 33) {
+  klikB33();
+} else if (rand == 34) {
+  klikB34();
+} else if (rand == 35) {
+  klikB35();
+} else {
+  klikB36();
+}
+   j++
+    //alert(j)
+    if (j == 40) {clearInterval(timers);}},40);
+}
+
+/**/
+
+  setTimeout(shuffle, 1000);
+
+
+function klikA1(){
+      document.getElementById('n1').classList.toggle("red");
+      document.getElementById('n2').classList.toggle("red");
+      document.getElementById('n4').classList.toggle("red");
+      popTree();
+}
+function klikA2(){
+ document.getElementById('n1').classList.toggle("red");
+      document.getElementById('n2').classList.toggle("red");
+      document.getElementById('n3').classList.toggle("red");
+      document.getElementById('n5').classList.toggle("red");
+      popTree();
+}
+function klikA3(){
+      document.getElementById('n2').classList.toggle("red");
+      document.getElementById('n3').classList.toggle("red");
+      document.getElementById('n6').classList.toggle("red");
+      popTree();
+}
+function klikA4(){
+      document.getElementById('n1').classList.toggle("red");
+      document.getElementById('n4').classList.toggle("red");
+      document.getElementById('n5').classList.toggle("red");
+      document.getElementById('n7').classList.toggle("red");
+      popTree();
+}
+function klikA5(){
+      document.getElementById('n2').classList.toggle("red");
+      document.getElementById('n4').classList.toggle("red");
+      document.getElementById('n5').classList.toggle("red");
+      document.getElementById('n6').classList.toggle("red");
+      document.getElementById('n8').classList.toggle("red");
+      popTree();
+}
+function klikA6(){
+      document.getElementById('n3').classList.toggle("red");
+      document.getElementById('n5').classList.toggle("red");
+      document.getElementById('n6').classList.toggle("red");
+      document.getElementById('n9').classList.toggle("red");
+      popTree();
+}
+function klikA7(){
+      document.getElementById('n4').classList.toggle("red");
+      document.getElementById('n7').classList.toggle("red");
+      document.getElementById('n8').classList.toggle("red");
+      popTree();
+}
+function klikA8(){
+      document.getElementById('n5').classList.toggle("red");
+      document.getElementById('n7').classList.toggle("red");
+      document.getElementById('n8').classList.toggle("red");
+      document.getElementById('n9').classList.toggle("red");
+      popTree();
+}
+function klikA9(){
+      document.getElementById('n6').classList.toggle("red");
+      document.getElementById('n8').classList.toggle("red");
+      document.getElementById('n9').classList.toggle("red");
+      popTree();
+}
+
+
+
+function klikB1(){
+      document.getElementById('b1').classList.toggle("red");
+      document.getElementById('b2').classList.toggle("red");
+      document.getElementById('b7').classList.toggle("red");
+}
+function klikB2(){
+      document.getElementById('b1').classList.toggle("red");
+      document.getElementById('b2').classList.toggle("red");
+      document.getElementById('b3').classList.toggle("red");
+      document.getElementById('b8').classList.toggle("red");
+}
+function klikB3(){
+      document.getElementById('b2').classList.toggle("red");
+      document.getElementById('b3').classList.toggle("red");
+      document.getElementById('b4').classList.toggle("red");
+      document.getElementById('b9').classList.toggle("red");
+}
+function klikB4(){
+      document.getElementById('b3').classList.toggle("red");
+      document.getElementById('b4').classList.toggle("red");
+      document.getElementById('b5').classList.toggle("red");
+      document.getElementById('b10').classList.toggle("red");
+}
+function klikB5(){
+      document.getElementById('b4').classList.toggle("red");
+      document.getElementById('b5').classList.toggle("red");
+      document.getElementById('b6').classList.toggle("red");
+      document.getElementById('b11').classList.toggle("red");
+}
+function klikB6(){
+      document.getElementById('b5').classList.toggle("red");
+      document.getElementById('b6').classList.toggle("red");
+      document.getElementById('b12').classList.toggle("red");
+}
+function klikB7(){
+      document.getElementById('b7').classList.toggle("red");
+      document.getElementById('b8').classList.toggle("red");
+      document.getElementById('b13').classList.toggle("red");
+      document.getElementById('b1').classList.toggle("red");
+}
+function klikB8(){
+      document.getElementById('b7').classList.toggle("red");
+      document.getElementById('b8').classList.toggle("red");
+      document.getElementById('b9').classList.toggle("red");
+      document.getElementById('b2').classList.toggle("red");
+      document.getElementById('b14').classList.toggle("red");
+}
+function klikB9(){
+      document.getElementById('b8').classList.toggle("red");
+      document.getElementById('b9').classList.toggle("red");
+      document.getElementById('b10').classList.toggle("red");
+      document.getElementById('b3').classList.toggle("red");
+      document.getElementById('b15').classList.toggle("red");
+}
+function klikB10(){
+      document.getElementById('b9').classList.toggle("red");
+      document.getElementById('b10').classList.toggle("red");
+      document.getElementById('b11').classList.toggle("red");
+      document.getElementById('b4').classList.toggle("red");
+      document.getElementById('b16').classList.toggle("red");
+}
+function klikB11(){
+      document.getElementById('b10').classList.toggle("red");
+      document.getElementById('b11').classList.toggle("red");
+      document.getElementById('b12').classList.toggle("red");
+      document.getElementById('b5').classList.toggle("red");
+      document.getElementById('b17').classList.toggle("red");
+}
+function klikB12(){
+      document.getElementById('b11').classList.toggle("red");
+      document.getElementById('b12').classList.toggle("red");
+      document.getElementById('b6').classList.toggle("red");
+      document.getElementById('b18').classList.toggle("red");
+}
+function klikB13(){
+      document.getElementById('b13').classList.toggle("red");
+      document.getElementById('b14').classList.toggle("red");
+      document.getElementById('b7').classList.toggle("red");
+      document.getElementById('b19').classList.toggle("red");
+}
+function klikB14(){
+      document.getElementById('b13').classList.toggle("red");
+      document.getElementById('b14').classList.toggle("red");
+      document.getElementById('b15').classList.toggle("red");
+      document.getElementById('b8').classList.toggle("red");
+      document.getElementById('b20').classList.toggle("red");
+}
+function klikB15(){
+      document.getElementById('b14').classList.toggle("red");
+      document.getElementById('b15').classList.toggle("red");
+      document.getElementById('b16').classList.toggle("red");
+      document.getElementById('b9').classList.toggle("red");
+      document.getElementById('b21').classList.toggle("red");
+}
+function klikB16(){
+      document.getElementById('b15').classList.toggle("red");
+      document.getElementById('b16').classList.toggle("red");
+      document.getElementById('b17').classList.toggle("red");
+      document.getElementById('b10').classList.toggle("red");
+      document.getElementById('b22').classList.toggle("red");
+}
+function klikB17(){
+      document.getElementById('b16').classList.toggle("red");
+      document.getElementById('b17').classList.toggle("red");
+      document.getElementById('b18').classList.toggle("red");
+      document.getElementById('b11').classList.toggle("red");
+      document.getElementById('b23').classList.toggle("red");
+}
+function klikB18(){
+      document.getElementById('b17').classList.toggle("red");
+      document.getElementById('b18').classList.toggle("red");
+      document.getElementById('b12').classList.toggle("red");
+      document.getElementById('b24').classList.toggle("red");
+}
+function klikB19(){
+      document.getElementById('b19').classList.toggle("red");
+      document.getElementById('b20').classList.toggle("red");
+      document.getElementById('b13').classList.toggle("red");
+      document.getElementById('b25').classList.toggle("red");
+}
+function klikB20(){
+      document.getElementById('b19').classList.toggle("red");
+      document.getElementById('b20').classList.toggle("red");
+      document.getElementById('b21').classList.toggle("red");
+      document.getElementById('b14').classList.toggle("red");
+      document.getElementById('b26').classList.toggle("red");
+}
+function klikB21(){
+      document.getElementById('b20').classList.toggle("red");
+      document.getElementById('b21').classList.toggle("red");
+      document.getElementById('b22').classList.toggle("red");
+      document.getElementById('b15').classList.toggle("red");
+      document.getElementById('b27').classList.toggle("red");
+}
+function klikB22(){
+      document.getElementById('b21').classList.toggle("red");
+      document.getElementById('b22').classList.toggle("red");
+      document.getElementById('b23').classList.toggle("red");
+      document.getElementById('b16').classList.toggle("red");
+      document.getElementById('b28').classList.toggle("red");
+}
+function klikB23(){
+      document.getElementById('b22').classList.toggle("red");
+      document.getElementById('b23').classList.toggle("red");
+      document.getElementById('b24').classList.toggle("red");
+      document.getElementById('b17').classList.toggle("red");
+      document.getElementById('b29').classList.toggle("red");
+}
+function klikB24(){
+      document.getElementById('b23').classList.toggle("red");
+      document.getElementById('b24').classList.toggle("red");
+      document.getElementById('b18').classList.toggle("red");
+      document.getElementById('b30').classList.toggle("red");
+}
+function klikB25(){
+      document.getElementById('b25').classList.toggle("red");
+      document.getElementById('b26').classList.toggle("red");
+      document.getElementById('b19').classList.toggle("red");
+      document.getElementById('b31').classList.toggle("red");
+}
+function klikB26(){
+      document.getElementById('b25').classList.toggle("red");
+      document.getElementById('b26').classList.toggle("red");
+      document.getElementById('b27').classList.toggle("red");
+      document.getElementById('b20').classList.toggle("red");
+      document.getElementById('b32').classList.toggle("red");
+}
+function klikB27(){
+      document.getElementById('b26').classList.toggle("red");
+      document.getElementById('b27').classList.toggle("red");
+      document.getElementById('b28').classList.toggle("red");
+      document.getElementById('b21').classList.toggle("red");
+      document.getElementById('b33').classList.toggle("red");
+}
+function klikB28(){
+      document.getElementById('b27').classList.toggle("red");
+      document.getElementById('b28').classList.toggle("red");
+      document.getElementById('b29').classList.toggle("red");
+      document.getElementById('b22').classList.toggle("red");
+      document.getElementById('b34').classList.toggle("red");
+}
+function klikB29(){
+      document.getElementById('b28').classList.toggle("red");
+      document.getElementById('b29').classList.toggle("red");
+      document.getElementById('b30').classList.toggle("red");
+      document.getElementById('b23').classList.toggle("red");
+      document.getElementById('b35').classList.toggle("red");
+}
+function klikB30(){
+      document.getElementById('b29').classList.toggle("red");
+      document.getElementById('b30').classList.toggle("red");
+      document.getElementById('b24').classList.toggle("red");
+      document.getElementById('b36').classList.toggle("red");
+}
+function klikB31(){
+      document.getElementById('b31').classList.toggle("red");
+      document.getElementById('b32').classList.toggle("red");
+      document.getElementById('b25').classList.toggle("red");
+}
+function klikB32(){
+      document.getElementById('b31').classList.toggle("red");
+      document.getElementById('b32').classList.toggle("red");
+      document.getElementById('b33').classList.toggle("red");
+      document.getElementById('b26').classList.toggle("red");
+}
+function klikB33(){
+      document.getElementById('b32').classList.toggle("red");
+      document.getElementById('b33').classList.toggle("red");
+      document.getElementById('b34').classList.toggle("red");
+      document.getElementById('b27').classList.toggle("red");
+}
+function klikB34(){
+      document.getElementById('b33').classList.toggle("red");
+      document.getElementById('b34').classList.toggle("red");
+      document.getElementById('b35').classList.toggle("red");
+      document.getElementById('b28').classList.toggle("red");
+}
+function klikB35(){
+      document.getElementById('b34').classList.toggle("red");
+      document.getElementById('b35').classList.toggle("red");
+      document.getElementById('b36').classList.toggle("red");
+      document.getElementById('b29').classList.toggle("red");
+}
+function klikB36(){
+      document.getElementById('b35').classList.toggle("red");
+      document.getElementById('b36').classList.toggle("red");
+      document.getElementById('b30').classList.toggle("red");
+}
+
+
+/*sounds*/
+    $(document).ready(function(){
+
+        $.ionSound({
+            sounds: ["pin"],
+            path: "http://labirint1.url.ph/",
+            multiPlay: true,
+            volume: "1.0"
+        });
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*sound*/
+function volume() {
+   size = document.getElementById("size").value;
+   var n = size/10 - 0.1;
+   //alert(n)
+   $.ionSound({sounds: ["pin"],path: "",volume: n});
+   }
+ $(document).ready(function(){
+
+        $.ionSound({
+            sounds: ["pin"],
+            path: "http://labirint1.url.ph/",
+            multiPlay: true,
+            volume: "1.0"
+
+        });
+
+
+
+    });
+/*slider*/
+$(function() {
+
+			//Store frequently elements in variables
+			var slider  = $('#slider'),
+				tooltip = $('.tooltip');
+
+
+			//Hide the Tooltip at first
+			tooltip.hide();
+
+			//Call the Slider
+			slider.slider({
+				//Config
+				range: "min",
+				min: 1,
+				value: 69,
+
+
+				start: function(event,ui) {
+
+				    tooltip.fadeIn('fast');
+				},
+
+				//Slider Event
+				slide: function(event, ui) { //When the slider is sliding
+
+					var value  = slider.slider('value'),
+						volume = $('.volume');
+
+
+					tooltip.css('left', value).text(ui.value);  //Adjust the tooltip accordingly
+                   var n = value/100
+                  $.ionSound({sounds: ["pin"],path: "http://labirint1.url.ph/",volume: n});
+                   //alert(n);
+					if(value <= 12) {
+                         OFF()
+                        function OFF(){ $.ionSound.destroy();}
+						volume.css('background-position', '0 0');
+					}
+					else if (value <= 31) {
+						volume.css('background-position', '0 -25px');
+					}
+					else if (value <= 75) {
+						volume.css('background-position', '0 -50px');
+					}
+					else {volume.css('background-position', '0 -75px');
+					};
+
+				},
+
+				stop: function(event,ui) {
+
+				    tooltip.fadeOut('fast');
+				},
+			});
+
+		});
+		 VK.callMethod("resizeWindow", 627, 477);/*размер по умолчанию*/
+function test(){alert(volume)}
+</script>
+</body>
+
+
+</html>
