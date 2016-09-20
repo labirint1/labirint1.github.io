@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/bipav/3/edit
+-->
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="[ВОПРОСЫ]v1.0">
+  <title>Ответы на вопросы</title>
+
+  <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="shortcut icon" type="image/gif" href="http://cs5616.vk.me/u85369729/656f382x.gif?3">
+  <script src="//googledrive.com/host/0B0zTgDj4fTXrOGVlWTI2ZnZyY1k/jquery.zclip.js"></script>
+
+
+<style id="jsbin-css">
+body{
+	background:#AE8D4E;
+}
+
+
+
+
+.txt div:hover, .txtFocus{
+  color:#000 !important;
+  background:#7C5B1E !important;
+}
+.txt div:active, .txtSelected{
+  /color:#ff0 !important;
+  /background:#000 !important;
+  color:#EEB01F !important;
+  background:#222 !important;
+}
+.txt div span{
+  text-decoration:underline;
+  /font-weight:bold;//жир
+}/*ответы*/
+
+
+
+.txtEven{/*нечётные*/
+  color:#111;
+  background:#9C7B3D;
+}
+.txtOdd-OFF{/*чётные*/
+  color:#222;
+  background:#777;
+  }
+
+
+
+
+.check{
+  transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  width:26px;
+  height:22px;
+  /background:red;
+  margin:6px 5px ;
+  position:fixed;
+  float:left;
+}
+.check2{
+  transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  width:24px;
+  height:25px;
+  /background:red;
+  margin:-4px 5px ;
+  position:fixed;
+  float:left;
+}
+
+
+
+
+.txtOFF{
+  //font-family: Verdana;
+  background: #AE8D4E;
+  //border: #f00 dashed 14px;
+}
+.txt23 div{
+  //background: #00f;
+  //color:#000;
+  //border: #f00 solid 1px;
+  //margin:0px 11px 0px 11px;
+  //padding:12px;
+  //opacity: 0.9;
+}
+.txt23>div{
+
+	//border-width : 2px;
+	//border-top-color : #FF1414;
+	//border-left-color : #002AA8;
+	//border-right-color : #009809;
+	//border-bottom-color : #FF20DD;
+	//border-top-style : solid;
+	//border-bottom-style : dotted;
+	//border-right-style : double;
+	//border-left-style : double;
+
+
+
+
+ //background: #f00;
+ //color:#000;
+ //border: #f00 #f00 dashed 1px;
+ //margin:22px;
+ //padding:0px 0px 5px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.txt div span {
+  //border: #9C5B2D dashed 1px;
+  //background:#9C7B3D;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.1txt div span:hover {
+  //border: #9C5B2D dashed 1px;
+  //background:#f33;
+}
+
+
+
+
+
+
+
+
+
+
+1span{
+  background:#777;
+  //border: #f00 solid 1px;
+  //margin:10px 10px 10px 10px;
+  //position: relative;
+  //display: block;
+  padding:10px;
+}
+
+
+
+
+
+
+.1qwe{
+  font-family: Verdana;
+  background:#777;
+  border: #f78778 dashed 4px;
+  color : #333;
+  margin:auto;
+  width:220px;
+  height:220px;
+}
+
+body{
+     background: #AE8D4E;
+
+  font-family: Verdana;
+  /text-shadow: none;
+  /color: #000;
+  /text-decoration: none;
+  /word-spacing: normal;
+  /text-align: left;
+  letter-spacing: 1;
+  line-height: 1.5em;
+  font-size: 0.8em;
+  /white-space: pre-wrap;
+}
+
+
+/*flash*/
+div.hover {
+  //padding:10px;
+  //border: #f78778 dashed 1px;
+    color: #000 !important;
+background:#af0 !important;
+}
+
+
+div.active {
+ // padding:10px;
+    color: #ff0 !important;
+    background:#000  !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=====================================Кнопка копирования=================*/
+/*Кнопка копирования1*/
+.key{
+  background:#CDC4AF;
+  width:310px;
+  height:48px;
+  position:fixed;
+  bottom:10px;
+  right:10px;
+}
+.key:before{
+  background:#ae6cac;
+  CONTENT:'';
+  display:block;
+  width:310px;
+  height:3px;
+}
+.key:after{
+  z-index:1;
+  content:'';
+  display:block;
+  width:15px;
+  height:15px;
+  background:#CDC4AF;
+  transform:rotate(-45deg);
+  margin:36px 18px;
+  position:absolute;
+}
+label{
+  z-index:43;
+  position:absolute;
+  width:33px;
+  height:34px;
+  margin:6px 7px;
+  text-align:center;
+  line-height:2.2;
+  color:#857487;
+  border-top-left-radius:2px;
+  border-bottom-left-radius:2px;
+  box-shadow:0.1px 0 2px #6c5B6d;
+  font-family:icon;
+  text-shadow:0 -1px 0 #666;
+  -webkit-font-smoothing: antialiased;
+  background:#dedede;
+  background:#ae6cac;
+  //background: #ae6cac url(http://screen.fst.su/support/17P0IFU.png) no-repeat 4px;
+}
+.key input[type=text]{
+  z-index:32;
+  position:absolute;
+  font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
+  font-weight:100;
+  -webkit-font-smoothing: antialiased;
+  width:256px;
+  height:32px;
+  margin:6px 7px 0px;
+  border:0;
+  border-radius:2px;
+  outline:0;
+  display:block;
+  font-size:17px;
+  }
+.key input{padding-left:40px;}/*сдвиг вправо*/
+#block:active > #block:before{
+	background:red;
+}
+#submit{
+  cursor: pointer;
+  z-index:32;
+  position:absolute;
+  background:#ae6cac;
+  color:#fff;
+  height:34px;
+  width:101px;
+  position:absolute;
+
+  margin:6px 203px;
+  font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
+  font-size:16px;
+  text-align:center;
+  /font-weight:bold;
+  text-shadow:0 -1px 0 #333;
+  line-height:2.2;
+  padding:0;
+  border:0;
+  border-top-right-radius:2px;
+  border-bottom-right-radius:2px;
+  border-top-left-radius:0px;
+  border-bottom-left-radius:0px;
+  box-shadow:-1px 0 1px 0px #6c5b6d;
+}
+#submit:hover{
+  background:#5EA81A;
+  background-image: -webkit-linear-gradient(top, #955280, #AE78AC);
+  background-image: -moz-linear-gradient(top, #955280, #AE78AC);
+  background-image: -o-linear-gradient(top, #955280, #AE78AC);
+  background-image: linear-gradient(to bottom, #955280, #AE78AC);
+}
+#submit:active {
+  background: #5EA81A;
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+/* placeholder */
+::-webkit-input-placeholder {
+	-webkit-font-smoothing: antialiased;
+	color:#999;
+	font-size:17px;
+}
+:-moz-input-placeholder {
+	color:#999;
+	font-size:17px;
+}
+
+/*кнопка копирования2*/
+
+.keys{
+  position:fixed;
+  /background:red;
+  width:300px;
+  top:30px;
+  right:30px;
+  /opacity:0.9;
+}
+
+.keys input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+:-moz-placeholder {
+  color: #999 !important;
+}
+::-webkit-input-placeholder {
+  color: #999;
+}
+.subscribe-input {
+  padding: 0 16px;
+  width: 100%;
+  height: 30px;
+  font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
+  font-size: 17px;
+  color: #444;
+  background: #ffd;
+  background: #E0D5BE;
+ /background: #CCAE7C;
+  border: 0px solid;
+  border-radius: 20px;
+  -webkit-box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.88), 0px 1px #ffd;
+  -moz-box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.88), 0px 1px #ffd;
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.88), 0px 1px #ffd;
+}
+.subscribe-input:focus {
+  outline: 0;
+}
+
+
+
+
+
+.subscribe-submit {
+  top: 0px;
+  right:0px;
+  height: 31px;
+
+
+  top: 0px;
+  right: 1px;
+  height: 29px;
+
+  display: block;
+  position: absolute;
+  padding-left: 5px;
+  width: 120px;
+  text-align:left;
+  border:none;
+  border-radius: 0px 20px 20px 0px;
+  -moz-border-radius-topleft:0px;
+  -moz-border-radius-topright:20px;
+  -moz-border-radius-bottomleft:0px;
+  -moz-border-radius-bottomright:20px;
+ font:14px Arial, Helvetica, sans-serif;
+ /font-weight:bold;
+ color:#ffffff;
+ background-color:#9bce02;
+ background-image: -moz-linear-gradient(top, #9bce02 0%, #359700 100%);
+ background-image: -webkit-linear-gradient(top, #9bce02 0%, #359700 100%);
+ background-image: -o-linear-gradient(top, #9bce02 0%, #359700 100%);
+ background-image: -ms-linear-gradient(top, #9bce02 0% ,#359700 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#359700', endColorstr='#359700',GradientType=0 );
+ background-image: linear-gradient(top, #9bce02 0% ,#359700 100%);
+ -webkit-box-shadow:-2px 0px 3px rgba(0, 0, 0, 0.4), inset 0px 1px 2px #000000;
+ -moz-box-shadow:-2px 0px 3px rgba(0, 0, 0, 0.4), inset 0px 1px 2px #000000;
+ box-shadow:-2px 0px 3px rgba(0, 0, 0, 0.4), inset 0px 1px 2px #000000;
+
+
+
+
+ /text-shadow: 0px 0px 4px #bababa;
+ /filter: dropshadow(color=#bababa, offx=0, offy=0);  -webkit-transition: all 0.16s ease-in-out;
+ /-moz-transition:  all 0.16s ease-in-out;
+ /-o-transition:  all 0.16s ease-in-out;
+ /transition:  all 0.16s ease-in-out;}.button:hover{
+ /padding:7px 15px;
+ /border:solid 1px #00cf23;
+ /-webkit-border-radius:0px 55px 55px 0px; 	 				 border-radius: 0px 55px 55px 0px; 					-moz-border-radius-topleft:0px; 					-moz-/border-radius-topright:55px; 					-moz-border-radius-bottomleft:0px; 					-moz-border-radius-bottomright:55px;
+ /font:17px Arial, Helvetica, sans-serif;
+ /font-weight:bold;
+ /color:#ffffff;
+ /background-color:#3ba4c7;
+ /background-image: -moz-linear-gradient(top, #3ba4c7 0%, #1982a5 100%);
+ /background-image: -webkit-linear-gradient(top, #3ba4c7 0%, #1982a5 100%);
+ /background-image: -o-linear-gradient(top, #3ba4c7 0%, #1982a5 100%);
+ /background-image: -ms-linear-gradient(top, #3ba4c7 0% ,#1982a5 100%);
+ /filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1982a5', endColorstr='#1982a5',GradientType=0 );
+ /background-image: linear-gradient(top, #3ba4c7 0% ,#1982a5 100%);
+ /-webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+ /-moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
+ /box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+
+ /text-shadow: -1px 7px 13px #6fff00;
+ /filter: dropshadow(color=#6fff00, offx=-1, offy=7);}.button:active{
+ /padding:12px 13px;
+ /border:solid 1px #005072;
+ -webkit-border-radius:0px 55px 55px 0px;
+   border-radius: 0px 55px 55px 0px;
+   -moz-border-radius-topleft:0px;
+   -moz-border-radius-topright:55px;
+   -moz-border-radius-bottomleft:0px;
+   -moz-border-radius-bottomright:55px;
+ /font:17px Arial, Helvetica, sans-serif;
+ /font-weight:bold;
+ /color:#ff0000;
+ /background-color:#3BA4C7;
+ /background-image: -moz-linear-gradient(top, #3BA4C7 0%, #1982A5 100%);
+ /background-image: -webkit-linear-gradient(top, #3BA4C7 0%, #1982A5 100%);
+ /background-image: -o-linear-gradient(top, #3BA4C7 0%, #1982A5 100%);
+ /background-image: -ms-linear-gradient(top, #3BA4C7 0% ,#1982A5 100%);
+ /filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1982A5', endColorstr='#1982A5',GradientType=0 );
+ /background-image: linear-gradient(top, #3BA4C7 0% ,#1982A5 100%);
+ /-webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+ /-moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
+ /box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+
+ }
+
+
+
+
+
+
+.subscribe-submit8 {
+  /text-shadow:0px 0px 9px #fff;
+  font-size: 14px;
+  color:#177111;
+  display: block;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  padding-left: 5px;
+  height: 29px;
+  width: 120px;
+  background: #D1B98B;
+  border: 0px solid;
+  /border-color: #4c9d50 #4c9d50 #4c9d50 #55af5a;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  background-image: -webkit-linear-gradient(top, #F6D82B, #FA842C);
+  /background-image: -moz-linear-gradient(top, #84f087, #4cd94a);
+  /background-image: -o-linear-gradient(top, #84f087, #4cd94a);
+  /background-image: linear-gradient(to bottom, #84f087, #4cd94a);
+  /-webkit-box-shadow: inset 0px 2px 9px rgba(0, 0, 0, 0.9);
+  /box-shadow: inset 0 1px rgba(255, 255, 255, 0.4);
+  text-align:left;
+}
+.subscribe-submit:active {
+  background: #4cdf4d;
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+.subscribe-submitOFF:after {
+  content: '';
+  position: absolute;
+  /display: block;
+  right:4px;
+  margin-top: 1px;
+  width: 25px;
+  height: 19px;
+  background: url("http://screen.fst.su/support/17P0IFU.png");
+}
+
+.lt-ie9 .subscribe-input {
+  line-height: 33px;
+}
+/*=====================================Кнопка копирования=================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*тест*/
+.selected{background:red;
+color:green;}
+
+
+
+.txt div:focus{
+  background: #35C835;
+  border: #f00 #f00 dashed 1px;
+  font-size: 17px;
+}
+
+
+
+.zclip{
+
+	/border-width : px;
+	/border-top-color : #FF1414;
+	/border-left-color : #002AA8;
+	/border-right-color : #009809;
+	/border-bottom-color : #FF20DD;
+	/border-top-style : solid;
+	/border-bottom-style : dotted;
+	/border-right-style : dotted;
+	/border-left-style : dashed;
+	/border-top-width : 2px;
+	/border-left-width : 2px;
+	/border-right-width : 2px;
+	/border-bottom-width : 4px;
+  /border: #00F solid 1px;
+    //background: #f00;
+    //opacity: 0.5;
+}
+
+/*тест*/
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<div class="txt">
+<div>Автомобиль, скрипка и собака Клякса не появились бы на свет без Айболита-69, режиссера .... <span>Быкова</span></div><div>Автор записки об освобождении крестьян 1856. <span>Кавелин</span></div><div>Автор первого российского проекта республиканского устройства? <span>Пестель</span></div><div>Автор свода законов при николае 1? <span>Сперанский</span></div><div>Автор современного самоучителя по основам музыкальной композиции "Ты? композитор", автор музыке к игре "Лабиринт" <span>Челноков</span></div><div>Автор теории "официальной народности"? <span>Уваров</span></div><div>Автор "Записки об освобождении крестьян" 1856 г? <span>Кавелин</span></div><div>Автор "Свода" законов при Николае I? <span>Сперанский</span></div><div>Агрегаты этого минерала настолько тонки, что плавятся даже в пламени свечи? <span>Аурипигмент</span></div><div>Агрегаты этого минерала очень легко разделить на отдельные зерна? <span>Датолит</span></div><div>Административно-территориальная единицы уездов при Петре I? <span>Доля</span></div><div>Адмиралтейств-коллегию при Петре I возглавлял Апраксин и ....? <span>Крюйс</span></div><div>Академик, описавший явление электрической дуги и возможность ее применения для электроосвещения, электросварки и электропайки металлов? <span>Петров</span></div><div>Актер вошедший в плеяду лучших актёров СССР, сыгравший роль советского разведчика в фильме "Вариант Омега" <span>Даль</span></div><div>Алмазный блеск и красная черта выделяют его среди других медных минералов? <span>Куприт</span></div><div>Альпы и кордильеры состоят в основном из этого минерала? <span>Кальцит</span></div><div>Американская киноиндустрия, своего рода страна в стране, "фабрика грез"? <span>Голливуд</span></div><div>Американская киностудия, своего рода страна в стране, "фабрика грез"? <span>Голливуд</span></div><div>Английский путешественник, по происхождению немец. В 1835-1844 годах исследовал Гвианское плоскогорье и пересекающие его реки (главным образом Эссекибо)? <span>Роберт</span></div><div>Архимандрит, погибший одним из первых от рук опричников? <span>Герман</span></div><div>Архимандрит, погибший первым от рук опричников? <span>Герман</span></div><div>Архитектор здания Адмиралтейства в Центре Петербурга в 19 веке? <span>Захаров</span></div><div>Архитектор здания Адмиралтейства в Центре Петербурга в XIX в? <span>Захаров</span></div><div>А. И. Герцен называл из "крещёной собственностью"? <span>Крепостные</span></div><div>Без чего нельзя стать музыкантом? <span>Слух</span></div><div>Белое духовенство России конца 19 века это дьяконы и ....? <span>Священники</span></div><div>Белое духовенство в России конца XIX в. - это дьяконы и ....? <span>Священники</span></div><div>Белорусы верили, что это существо обитает в болотах, богатых железной рудой? <span>Оржавиник</span></div><div>Битва с монголами в мае 1223 года на реке - <span>Калка</span></div><div>Благодаря ванадию в составе этот камень обладает интенсивной зеленой окраской? <span>Цаворит</span></div><div>Благодаря высокому показателю преломления этот камень прекрасен в бриллиантовой огранке. <span>Демантоид</span></div><div>Благодаря высокому содержанию железа эта разновидность шпинели обладает черным цветом. <span>Плеонаст</span></div><div>Благодаря высокому содержанию железа, эта разновидность шпинели обладает черным цветом? <span>Плеонаст</span></div><div>Благодаря небесному цвету этот минерал и получил свое название? <span>Целестин</span></div><div>Близ какого города проходил знаменитый музыкальный фестиваль 1969 года Вудсток? <span>Уоллкилл</span></div><div>Богиня весны у древних славян. <span>Порвата</span></div><div>Богиня любви и весны в славянской мифологии. <span>Прия</span></div><div>Богиня смерти у древних славян. <span>Мара</span></div><div>Бог летнего времени, который показал людям чудеса соединения огня и воды. <span>Купала</span></div><div>Божество у древних славян, которое творит не словом и магией, а своими руками. <span>Сварог</span></div><div>Бунт в Москве в 1662 году? <span>Медный</span></div><div>Бурый или дымчатый кварц - <span>Раухтопаз</span></div><div>Бурый уголь, возраст которого может насчитывать миллионы лет <span>Гагат</span></div><div>Бухта в которой нахимов разгромил турецкий флот - <span>Синопская</span></div><div>Бухта, в которой Нахимов разгромил турецкий флот? <span>Синопская</span></div><div>Бухта, в которой П.С Нихимов разгромил турецкий флот? <span>Синопская</span></div><div>Бухта, в которой П. С. Нахимов разгромил турецкий флот. <span>Синопская</span></div><div>Вацлав ("Щит и меч"), Владислав ("Бег"), Евгений ("Узник замка Иф") - творческая династия талантливых российских актеров .... <span>Дворжецких</span></div><div>Вацлав ("Щит и меч"), Владислав ("Бег"), Евгений ("Узник замка Иф") - творческая династия талантливых русских актеров .... <span>Дворжецких</span></div><div>Вацлав ("Щит и меч"), Владислав ("Бег"), Евгений ("Узник замка Иф") - творческая династия талантливых российских актеров .... <span>Дворжецких</span></div><div>Верхушки дружинного строя <span>Бояре</span></div><div>Весной какого года начался первый азовский поход петра 1 <span>1695</span></div><div>Весной какого года начался так называемый "Первый азовских поход" Петра I? <span>1695</span></div><div>Весной какого года начался так называемый "первый азовских поход" Петра I? <span>1695</span></div><div>Взимание различных даней и повинностей во времена монголо-татарского ига? <span>Послужное</span></div><div>Взимание различных даней и повинностей во времена монголо-татарского игра. <span>Послужное</span></div><div>Вид земледелия у славян когда поле отдыхает после .... использования. <span>Залежное</span></div><div>Вид земледелия у славян,когда зола от вырубленных деревьев несколько лет делала почву плодородной? <span>Подсечное</span></div><div>Вид земледелия у славян,когда участок целины использовался несколько лет,а потом "отдыхал"? <span>Залежное</span></div><div>Вид земледелия у славян, когда зола от вырубленных деревьев несколько лет делала почву плодородной. <span>Подсечное</span></div><div>Вид земледелия у славян, когда зола от вырубленных деревьев несколько лет делала почву плодородной? <span>Подсечное</span></div><div>Вид земледелия у славян, когда участок целины использовался несколько лет, а потом "отдыхал" - <span>Залежное</span></div><div>Вид земледелия у славян, когда участок целины использовался несколько лет, а потом "отдыхал" .. <span>Залежное</span></div><div>Вид искусства, который воспроизводит звуками чувства, настроения, картины природы? все, что можно увидеть и описать? <span>Музыка</span></div><div>Владелец "Отечественных записок" - одного из лучших журналов 19 в. - <span>Краевский</span></div><div>Владелец "Отечественных записок" - одного из лучших журналов XIX века? <span>Краевский</span></div><div>Владелец "Отечественных записок", одного из лучших журналов XIX в. <span>Краевский</span></div><div>Вместо воеводской администрации в России при Петре 1 ввели .... систему управления? <span>Губернскую</span></div><div>Вместо воеводской администрации в России при Петре I ввели .... систему управления. <span>Губернскую</span></div><div>Внук Стрибога, покровитель ветров - <span>Догода</span></div><div>Внук Стрибога, покровитель ветров. <span>Догода</span></div><div>Внук Стрибога, покровителя северного ветра. <span>Позвизд</span></div><div>Внутри этого камня бесчисленное множество пустот в виде трубочек и галерей - <span>Сепиолит</span></div><div>Внутри этого камня бесчисленное множество пустот в виде трубочек и галерей. <span>Сепиолит</span></div><div>Внутри этого камня бесчисленное множество пустот в виде трубочек и галерей? <span>Сепиолит</span></div><div>Военную коллегию при Петре 1 возглавляли Меньшиков и .... - скорее всего <span>Юсупов</span></div><div>Военную коллегию при Петре 1 возглавляли Меньшиков и .... <span>Вейде</span></div><div>Военную коллегию при Петре I возглавляли Меньшиков и .... <span>Вейде</span></div><div>Военную коллегию при Петре I возглавлял Меньшиков и .... <span>Вейде</span></div><div>Военную коллегию при петре 1 возглавляли меньшиков и .... <span>Вейде</span></div><div>Военный министр России в 1861 г. <span>Милютин</span></div><div>Военный министр России с 1861 г. - <span>Милютин</span></div><div>Военный министр России с 1861 г.? <span>Милютин</span></div><div>Военный министр России 1861 г.? <span>Милютин</span></div><div>Военный министр россии с 1861 - <span>Милютин</span></div><div>Военный министр с 1861 года. <span>Милютин</span></div><div>Воздвиг главный русский храм в 1497 году. <span>Фиораванти</span></div><div>Волокнистый минерал известный как морская пенка. <span>Сепиолит</span></div><div>Волокнистый минерал известный под названием морская пенка. - <span>Сепиолит</span></div><div>Волокнистый минерал известный под названием морская пенка. <span>Сепиолит</span></div><div>Волокнистый минерал, "морская пенка <span>Сепиолит</span></div><div>Волокнистый минерал, "морская пенка". <span>Сепиолит</span></div><div>Волосы какого животного используют для изготовления скрипичного смычка? <span>Лошадь</span></div><div>Волос какого животного используют в скрипичном смычке – <span>Конский</span></div><div>Восточнославянский племенной союз, занимавший в 6-10 вв. территорию Полесья, Правобережье Днепра, западнее полян, по течению рек Тетерев, Уж, Уборт, Ствига. <span>Древляне</span></div><div>Восточнославянский союз племен, заселявший территорию по обоим берегам Западного Буга и у истока р. Припять. <span>Волыняне</span></div><div>Восточнославянский союз племен, обитавших в бассейне верхнего и среднего течения Оки и по р. Москва. <span>Вятичи</span></div><div>Восточнославянский союз племен, существовавший в 9 - сер. 10 вв. <span>Уличи</span></div><div>Впервые этот камень был обнаружен в Саксонии и описан в 1837 году <span>Варисцит</span></div><div>Впервые этот камень был обнаружен в Саксонии и описан в 1837 году. <span>Варисцит</span></div><div>Впервые этот камень был обнаружен в саксонии - <span>Варисцит</span></div><div>Всеобщая перепись населения в Российской Федерации называлась. <span>Ревизия</span></div><div>Вславянской мифологии эта богиня покровительствовала браку. <span>Цеця</span></div><div>Вславянской мифологии этот дух заботится о лошадях. <span>Возила</span></div><div>Вторая категория дворянства по "Своду Российской империи" - <span>Духовенство</span></div><div>Вторая категория дворянства по "Своду Российской империи". <span>Духовенство</span></div><div>Вторая категория дворянства по "Своду Российской империи". <span>Потомственная</span></div><div>Вторая категория дворянства по "Своду российской империи". <span>Потомственная</span></div><div>Вторая категория дворянства согласно "Своду Российской империи"? <span>Потомственная</span></div><div>Вторая категория населения согласно Своду Российской Империи - <span>Духовенство</span></div><div>Вторая категория населения согласно Своду Российской Империи. <span>Духовенство</span></div><div>Вторая категория населения согласно своду российской империи. <span>Духовенство</span></div><div>Вторая категория населения согласно своду российской империи? <span>Духовенство</span></div><div>Вторая стана "союза трех императоров" - <span>Австрия</span></div><div>Вторая страна-член "Союза трёх императоров". <span>Австрия</span></div><div>Вторая страна-член "Союза трёх императоров"? <span>Австрия</span></div><div>Вторая страна-член "союза трех императоров"? <span>Австрия</span></div><div>Второе название бурого угля - <span>Лигнит</span></div><div>Второе название бурого угля. <span>Лигнит</span></div><div>Второе название бурого угля? <span>Лигнит</span></div><div>Второй глава русской революционной организации "Земля и Воля", созданной в 1861 году. <span>Утин</span></div><div>Второй глава русской революционной организации "Земля и воля", созданной в 1861 г.? <span>Утин</span></div><div>Второй глава русской революционной организации "Земля и воля", созданной в 1861 г.? <span>Утин</span></div><div>Второй столп основ русской жизнипо программе Александра III. <span>Православие</span></div><div>Второй столп основ русской жизни по программе Александра 3? <span>Православие</span></div><div>Второй столп основ русской жизни по программе Александра III. <span>Православие</span></div><div>Второй фронт Крымской войны назывался .... <span>Кавказским</span></div><div>Второй фронт Крымской войны назывался? <span>Кавказским</span></div><div>Второй фронт крымской войны назывался.. <span>Кавказским</span></div><div>Второй этап народнического движения в России XIX века назывался. <span>Разночинским</span>, революционно-демократическим</div><div>Высокоталантливый художник, родоначальник критического реализма в русской живописи в?? веке. <span>Федотов</span></div><div>ВыСШАя инстанция российских судов второй половины ХIХ в. <span>Сенат</span></div><div>ВыСШАя инстанция российских судов второй половины 19 века. <span>Сенат</span></div><div>ВыСШАя инстанция российских судов второй половины 19-го века - <span>Сенат</span></div><div>ВыСШАя инстанция российских судов второй половины 19-го века? <span>Сенат</span></div><div>ВыСШАя инстанция российских судов второй половины XIX в.? <span>Сенат</span></div><div>Высшее должностное лицо в десятичной системе деления общества на Руси. <span>Тысяцкий</span></div><div>Высшее должностное лицо в десятичной системе деления общества на Руси? <span>Тысяцкий</span></div><div>Высшее должностное лицо в десятичной системе деления общества на руси - <span>Тысяцкий</span></div><div>Высшее должностное лицо в десятичной системе деления общества на руси <span>Тысяцкий</span></div><div>Высшее должностное лицо в десятичной системе деления общества на руси? <span>Тысяцкий</span></div><div>Высший государственный орган в конце XV века. <span>Дума</span></div><div>Высший государственный орган централизованного государства на Руси в конце 15 века? <span>Дума</span></div><div>Высший государственный орган централизованного государства на Руси с конца XV века. <span>Дума</span></div><div>В Китае из называют бао-та-ши - камни-погоды. <span>Ортоцерасы</span></div><div>В Китае из называют "бао-та-ши" - "камни-пагоды". <span>Ортоцерасы</span></div><div>В Китае их называют "бао-та-ши",что означает камни-пагоды - <span>Ортоцерасы</span></div><div>В Китае их называют "бао-та-ши", что означает ""камни-пагоды". <span>Ортоцерасы</span></div><div>В России этот минерал добывается в Соликамском местонахождении калийных и магниевых солей? <span>Галит</span></div><div>В России этот минерал добывается в соликамском местонахождении калийных и магниевых солей - <span>Галит</span></div><div>В России 17 века называлась система при которой офицерский корпус набирался из дворян - <span>Рекрутская</span></div><div>В России 17 века называлась система при которой офицерский корпус набирался из дворян? <span>Рекрутская</span></div><div>В Танзании и Канаде добывают характерные бесцветные кристаллы этого камня <span>Лейкогранат</span></div><div>В Танзании и Канаде добывают характерные бесцветные кристаллы этого камня. <span>Лейкогранат</span></div><div>В Танзании и канаде добывают характерные бесцветные кристаллы этого камня. <span>Лейкогранат</span></div><div>В великое посольство при петре 1 входили головин и..? дьяк <span>Возницын</span></div><div>В декаротивно-отделочных работах этот мягкий волокнистый минерал применяется очень часто - <span>Сепиолит</span></div><div>В декоративно-отделочных работах этот мягкий волокнистый минерал применяется очень часто <span>Сепиолит</span></div><div>В декоративно-отделочных работах этот мягкий волокнистый минерал применяется очень часто. <span>Сепиолит</span></div><div>В дореформенной царской России население делилось на .... <span>Сословия</span></div><div>В дореформенной царской России население делилось на ....? <span>Сословия</span></div><div>В дореформенной царской россии население делилось на .... <span>Сословия</span></div><div>В дореформенной царской россии население делилось на ....? <span>Сословия</span></div><div>В драматическом спектакле монолог, а в опере и оперетте- ....? <span>Ария</span></div><div>В древние времена этат камень считался счастливым для воров и воинов? <span>Тигровый глаз</span></div><div>В древние времена этот камень считался счастливым для воров и воинов <span>Тигровый глаз</span></div><div>В древние времена этот камень считался счастливым для воров и воинов. <span>Тигровый глаз</span></div><div>В древние времена этот камень считался счастливым для воров и воинов? <span>Тигровый глаз</span></div><div>В древности люди считали, что этот камень изнутри заполнен дымом. <span>Раухтопаз</span></div><div>В древности этот камень использовался в качестве денег в Полинезии. <span>Перламутр</span></div><div>В древности этот камень использовался в качестве денег в Полинезии? <span>Перламутр</span></div><div>В древности этот камень использовался в качестве денег в полинезии - <span>Перламутр</span></div><div>В их составе присутствует биотит и роговая обманка,структура этой породы средне- и крупнозернистая? <span>Гнейсы</span></div><div>В их составе присутствуют биотит и роговая обманка, структура этой породы средне- и крупнозернистая. <span>Гнейсы</span></div><div>В их составе присутствуют биотит, роговая обманка .... - <span>Гнейсы</span></div><div>В какой горной породе находят красивые агаты образование которых вызвано поздними гидротермальными. <span>Риолиты</span></div><div>В какой день недели Майкл Джексон покинул мир живых? <span>Четверг</span></div><div>В какой монастырь была сослана царевна Софья в 1689 году? <span>Новодевичий</span></div><div>В какой монастырь была сослана царевна софья в 1689 - <span>Новодевичий</span></div><div>В какой стране был запущен в космос первый искусственный спутник Земли? <span>СССР</span></div><div>В какой стране добываются лучшие красталлы серандита? <span>Канада</span></div><div>В какой стране добываются лучшие кристаллы серандита. <span>Канада</span></div><div>В какой стране добывают лучшие кровельные сланцы? <span>Франция</span></div><div>В какой стране на сегодняшний день наиболее богатые залежи розового кварца <span>Бразилия</span></div><div>В какой стране на сегодняшний день наиболее богатые залежи розового кварца. <span>Бразилия</span></div><div>В какой стране на сегодняшний день наиболее богатые залежи розового кварца? <span>Бразилия</span></div><div>В какой стране на сегодняшний день наиболее богатый запас залежи розового кварца. <span>Бразилия</span></div><div>В какой стране открыта самое крупное месторождение говлита? <span>Сша</span></div><div>В какой стране открыто самое крупное месторождение говлита <span>Сша</span></div><div>В какой стране открыто самое крупное месторождение говлита. <span>Сша</span></div><div>В какой стране самое крупное месторождение говлита - <span>Сша</span></div><div>В какой стране сохранились самые богатые месторождения изумрудов? <span>Колумбия</span></div><div>В какой сфере возникли первые мануфактуры в России? <span>Металлургия</span></div><div>В какой сфере возникли первые мануфактуры в России? <span>Металлургия</span></div><div>В какой сфере возникли первые мануфактуры в России? <span>Металлургия</span></div><div>В какой сфере возникли первые мануфактуры в россии - <span>Металлургия</span></div><div>В какой части земного шара находится самая большая и загадочная пирамида? <span>Атлантика</span></div><div>В каком году Ремезов закончил книгу - <span>1701</span></div><div>В каком году С.Ремезов закончил "Чертежную книгу Сибири"? <span>1701</span></div><div>В каком году С. Ремезов закончил «Чертёжную книгу Сибири»? <span>1701</span></div><div>В каком году С. Ремезов закончил "Чертёжную книгу Сибири"? <span>1701</span></div><div>В каком году была выпущена первая в мире СВЧ печь – <span>1947</span></div><div>В каком году была выпущена первая в мире СВЧ печь? <span>1947</span></div><div>В каком году была выпущена первая программа-кодировщик в формат МР3? <span>1994</span></div><div>В каком году была разработана система доменных имён? <span>1984</span></div><div>В каком году была создана бурмистрская палата – <span>1699</span></div><div>В каком году была создана бурмистрская палата - <span>1699</span></div><div>В каком году было зафиксировано первое подключение к Интернету по телефонное линии? <span>1990</span></div><div>В каком году было зафиксировано первое подключение к Интернету по телефонной линии? <span>1990</span></div><div>В каком году было зафиксировано первое подключение к интернету по телефонной линии – <span>1990</span></div><div>В каком году был продемонстрирован первый звуковой фильм? <span>1927</span></div><div>В каком году был разработан популярный формат графических изображений GIF? <span>1987</span></div><div>В каком году был разработан популярный формат графических изображений PNG? <span>1995</span></div><div>В каком году был разработан популярный формат графического изображения JPEG? <span>1988</span></div><div>В каком году был разработан чат? <span>1988</span></div><div>В каком году был снят фильм, принесший славу российскому немому кинематографу? <span>1925</span></div><div>В каком году был установлен первый сервер – <span>1969</span></div><div>В каком году был установлен первый сервер? <span>1969</span></div><div>В каком году во время морского похода Петра I впервые поднят красно-сине-белый флаг? <span>1694</span></div><div>В каком году во время морского похода Петра I впервые поднят красно-сине-белый флаг? <span>1694</span></div><div>В каком году во время морского похода петра 1 был впервые поднят красно-сине-белый флаг - <span>1694</span></div><div>В каком году во время морского похода петра 1 впервые поднят красно сине белый флаг <span>1694</span></div><div>В каком году во время морского похода петра 1 впервые поднят флаг? <span>1964</span></div><div>В каком году вышел в прокат первый российский звуковой фильм «Путевка в жизнь» – <span>1931</span></div><div>В каком году вышел в прокат первый российский звуковой фильм "Путевка в жизнь"? <span>1931</span></div><div>В каком году вышел на экраны первый по-настоящему цветной фильм? <span>1934</span></div><div>В каком году в Москве создана Бурмистерская палата? - <span>1699</span></div><div>В каком году в Москве создана бурмистерская палата? <span>1699</span></div><div>В каком году в Москве создана бурмистрская палата? <span>1699</span></div><div>В каком году в москве была создана бурмистерская палата? <span>1699</span></div><div>В каком году в москве создана бурмистерская палата? <span>1699</span></div><div>В каком году изобретены кварцевые часы. <span>1929</span></div><div>В каком году компьютерная сеть стала международной? <span>1973</span></div><div>В каком году крепостные в России получили шанс освободиться? <span>1847</span></div><div>В каком году курилы перешли к японии за ее отказ притязании на сахалин? <span>1875</span></div><div>В каком году появился компакт-диск (CD)? <span>1979</span></div><div>В каком году появился компакт-диск(CD)? <span>1979</span></div><div>В каком году разработан популярный формат графических изображений PNG? <span>1995</span></div><div>В каком году состоялось первое мировое турне первого в мире кинотеатра? <span>1896</span></div><div>В каком году экипаж Международной Космической Станции получил прямой доступ в интернет? <span>2010</span></div><div>В каком году экипаж международной космической станции получил прямой доступ в интернет – <span>2010</span></div><div>В каком году, во время похода впервые петр 1 , поднял красно-синий-белый флаг - <span>1694</span></div><div>В каком городе было придумано пенотушение нефтяных пожаров? <span>Баку</span></div><div>В каком городе княгиня ольга приняла крещение. <span>Константинополь</span></div><div>В каком городе практически полтора месяца зимой 1569/70 г длился погром по приказу Ивана Грозного? <span>Новгород</span></div><div>В каком городе практически полтора месяца зимой 1569/70 г. Длился погром по приказу Ивана Грозного? <span>Новгород</span></div><div>В каком городе практически полтора месяца зимой 1569/70 г. длился погром по приказу Ивана Грозного? <span>Новгород</span></div><div>В каком журнале Чаадаев опубликовал свои "Философские письма". <span>Телескоп</span></div><div>В каком журнале Чаадаев публиковал цикл "Философские письма"? <span>Телескоп</span></div><div>В каком портовом городе стояла самая огромная статуя бога солнца Гелиоса? <span>Родос</span></div><div>В кинопрокат «Путевка в жизнь» - <span>1931</span></div><div>В китае их называют "бао-та-ши" что означает "камни-пагоды" - <span>Ортоцерасы</span></div><div>В конце 18 века был заключен "Дружественный трактат" между Россией и .... <span>Грузией</span></div><div>В конце XVIII заключён "Дружественный трактат" между Россией и ....? <span>Грузией</span></div><div>В литературе XVII в. ярким представителем официальной публицистики был монах Симеон Полоцкий (Самуил Емельянович Петровский - <span>Ситнианович</span></div><div>В мае 1223 года на этой реке произошло первое сражение русских и половецких дружин с монголо-татарским войско? <span>Калка</span></div><div>В начале 19 века в русской живописи наблюдался расцвет .... <span>Романтизма</span></div><div>В начале 19 в русской живописи наблюдался рассвет ....? <span>Романтизма</span></div><div>В начале XIX в. в русской живописи наблюдался рассвет. <span>Романтизма</span></div><div>В основном его залежи находятся в прибрежных зонах внутренних морей и глубоких экваториальных впадинах - <span>Гипс</span></div><div>В основном его залежи находятся в прибрежных зонах внутренних морей и глубоких экваториальных впадинах? <span>Гипс</span></div><div>В основном его залежи находят в прибрежных зонах внутренних и глубоких экваториальных впадинах. <span>Гипс</span></div><div>В отличие от других магматических пород они не образуют крупных массивов,а залегают в форме жил - <span>Диабазы</span></div><div>В отличие от других магматических пород, они не образуют крупных массивов , а залегают в форме жил? <span>Диабазы</span></div><div>В отличие от других магматических пород, они не образуют крупных массивов , а залегают в форме жил? <span>Диабазы</span></div><div>В отличие от других магматических, они не образуют крупных массивов, а залегают в форме жил. <span>Диабазы</span></div><div>В первой половине ХIХ века это был основной способ транспортировки в России - <span>Речной</span></div><div>В первой половине 19 века это был основной способ транспортировки в России. <span>Речной</span></div><div>В природе он встречается в виде зернистых столбчатых агрегатов, а также в виде обособленных выделений - <span>Жадеит</span></div><div>В природе он встречается в виде зернистых, столбчатых агрегатов а также в виде обособленных выделений. <span>Жадеит</span></div><div>В природе он встречается в виде зернистых, столбчатых агрегатов, а так же в виде обособленных выделений <span>Жадеит</span></div><div>В природе он встречается в виде зернистых, столбчатых агрегатов, а так же в виде обособленных выделений. <span>Жадеит</span></div><div>В славянской мифологии он прародитель богов и творец всего мира. <span>Род</span></div><div>В славянской мифологии считалось, что эта полубогиня хранит традиции погребальных обрядов. <span>Карна</span></div><div>В славянской мифологии так звали полубога с козлиными ушами и боящегося солнечного света. <span>Троян</span></div><div>В славянской мифологии эта богиня покровительствовала браку. <span>Цеця</span></div><div>В славянской мифологии этот бог покровительствовал смене сезонов "умиранию старого и приходу сильного молодого". <span>Коляда</span></div><div>В славянской мифологии этот бог покровительствовал смене сезонов "умиранию старого и приходу сильного, молодого". <span>Коляда</span></div><div>В славянской мифологии этот дух заботится о лошадях. <span>Возила</span></div><div>В состав "Великого посольства" Петра 1 входили Лефорт, Головин и думный дьяк. <span>Возницын</span></div><div>В состав "Великого посольства" Петра I входили Лефорт, Головин и думный дьяк .... <span>Возницын</span></div><div>В состав "великого посольства" Петра 1 входили Лефорт, Головин и - <span>Возницын</span></div><div>В средние века монахи понезнанию массого использовали лекарства с этим веществом .... и умирали? <span>Сурьма</span></div><div>В средние века монахи понезнанию массого использовали лекарства с этим веществом .... и умирали? <span>Сурьма</span></div><div>В средние века монахи по незнанию массово использовали лекарства с этим веществом и умирали - <span>Сурьма</span></div><div>В средние века монахи по незнанию массово использовали лекарства с этим веществом .... и умирали? <span>Сурьма</span></div><div>В строительно-отделочных работах этот мягкий волокнистый минерал .... - <span>Сепиолит</span></div><div>В сухом климате камень может потрескаться и даже рассыпаться. <span>Перламутр</span></div><div>В сухом климате этот камень трескается или может попросту рассыпаться. <span>Перламутр</span></div><div>В танзании и канаде добывают характерные бесцветные кристаллы этого камня. <span>Лейкогранат</span></div><div>В честь кого построили храм в Эфесе – <span>Артемида</span></div><div>В этого духа превращаются дети, проклятые собственными родителями и похищенные нечистой силой. <span>Кикимора</span></div><div>В этого духа превращаются дети, проклятые собственными родителями и похищеные нечистой силой. <span>Кикимора</span></div><div>В этой стране добывают лучшие кровельные сланцы. <span>Франция</span></div><div>В этой стране добывают лучшие кровельные сланцы? <span>Франция</span></div><div>В этой стране сохранились самые богатые месторождения изумрудов - <span>Колумбия</span></div><div>В этом году Курилы перешли к Японии за её отказ от притязаний на Сахалин. <span>1875</span></div><div>В этом году Курилы перешли к Японии за её отказ от притязаний на Сахалин? <span>1875</span></div><div>В этом году дороги соедини главные города Европейской царской России в XIX века? <span>1861</span></div><div>В этом году началось отмирание практики сбора дани самими великими князьями? <span>945</span></div><div>В этом году началось отмирание практики сбора дани самыми великими князьями? <span>945</span></div><div>В этом году плотность населения России достигла 8 человек на 1 кв. версту – <span>1800</span></div><div>В этом году плотность населения России достигла 8 человек на 1 кв. версту. <span>1800</span></div><div>В этом году плотность населения России достигла 8 человек на 1 кв. версту? <span>1800</span></div><div>В этом году соедине главные города Европейской царской России XIX в. <span>1861</span></div><div>В этот камень богиня Артемида превратила нимфу чтобы ее не нашел бог Дионис. <span>Аметист</span></div><div>В этот камень богиня Артемида превратила нимфу, чтобы ее не смог найти бог Дионис - <span>Аметист</span></div><div>В этот камень богиня Артемида превратила нимфу, чтобы ее не смог найти бог Дионис <span>Аметист</span></div><div>В этот камень богиня Артемида превратила нимфу, чтобы ее не смог найти бог Дионис. <span>Аметист</span></div><div>В этот камень богиня Артемида превратила нимфу, чтобы её не смог найти Дионис. <span>Аметист</span></div><div>В это время древние славяне возжигали костры и пекли особые пироги, оно считалось благоприятным для сева, свадеб и начала строительства дома. <span>Новолуние</span></div><div>В это сословие входили мелкие торговцы и ремесленники? <span>Мещанство</span></div>
+</div>
+
+<div class="key">
+  <label id="user" for="name"><div class="check"></div></label>
+  <input type="text" name="text" id="key" placeholder="CopyMe" required/>
+  <input type="submit" id="submit" name="submit" value="Копировать"/>
+</div>
+  <!--
+<div class='keys'>
+  <input id="keys" type="text" name="text" class="subscribe-input" placeholder="CopyMe" autofocus>
+  <button type="submit" class="subscribe-submit">Копировать<span class="check2"></span></button>
+</div>
+  -->
+<script>
+/*зебра*/
+$(".txt>div:even").addClass("txtEven");
+$(".txt>div:odd").addClass("txtOdd");
+
+var Null = 0;
+var key = "Ответы на вопросы";
+function checkon() {
+  $(".check").css({"background": "url(http://static.tumblr.com/upanoab/0hOmmcbuh/tick-sprite.png) no-repeat -23px" });
+  $(".check2").css({"background": "url(http://screen.fst.su/support/17P0IFU.png) no-repeat 0px"});
+  Null = ++Null;
+  setTimeout(function() {
+    Null = --Null;
+    if (Null<1) {
+      $(".check").css({"background": "url(http://static.tumblr.com/upanoab/0hOmmcbuh/tick-sprite.png) no-repeat -43px" });
+      $(".check2").css({"background": "url(http://screen.fst.su/support/17P0IFU.png) no-repeat 25px"});
+      /*checkoff();alert('');*/
+      }
+  }, 15000);
+}
+function checkoff() {
+  $(".check").css({"background": "url(http://static.tumblr.com/upanoab/0hOmmcbuh/tick-sprite.png) no-repeat 0px"});
+  $(".check2").css({"background": "url(http://screen.fst.su/support/17QBJJL.png) no-repeat -73px"});
+}
+$(document).ready(function(){
+  /*автоматический режим*//*
+$(".txt>div").zclip({
+  path: "http://www.steamdev.com/zclip/js/ZeroClipboard.swf",
+  copy: function() {
+    return $(this).children().text();
+  },
+  beforeCopy:function(){
+   $(this).children().css({
+      "text-decoration": "line-through",
+      "font-weight": "bolder1"
+    });
+  },
+  afterCopy:function(){
+    key = $(this).children().text();
+    document.querySelector('#keys').value =key;
+    document.querySelector('#key').value =key;
+  }
+});
+/*автоматический режим*/
+
+  /**полуавтомат**/
+  /*выделение слова jquery*/
+  $(".txt>div").mousedown(function() {
+       $(this).children().css({
+      "text-decoration": "none",
+      "font-weight": "bolder"
+    });
+
+  });
+  $(".txt>div").click(function() {
+    $(this).children().css({
+      "text-decoration": "line-through",
+      "font-weight": "normal"
+    });
+    /*$(this).addClass("selected");*/
+    checkoff();
+    key = $(this).children().text();
+    document.querySelector('#keys').value =key;
+    document.querySelector('#key').value =key;
+});
+  /*флешку на кнопки*/
+  $(".subscribe-submit, #submit").zclip({
+  path: "http://www.steamdev.com/zclip/js/ZeroClipboard.swf",
+  copy: function() {return key;},
+  beforeCopy:function(){
+   $(this).children().css({
+      "text-decoration": "line-through",
+      "font-weight": "bolder1"
+    });
+  },
+  afterCopy:function(){
+    checkon();
+  }
+});
+
+
+});
+</script>
+</body>
+</html>

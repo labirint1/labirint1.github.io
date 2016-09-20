@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://1170349065c0d3d9852b6697bdd6cc1b5fc8aa21.googledrive.com/host/0B0zTgDj4fTXrclc3dGlpUUVnVjA/KEY/KEYL5.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script type="text/javascript" src="../jquery.zclip.js"></script>
+   <!--
+ <script type="text/javascript" src="http://labirint1.url.ph/other/zclip/2/jquery.zclip.js"></script>
+  -->
+
+
+
+
+
+
+
+
+<meta name="description" content="фильтры для вопросов2" />
+  <meta charset="utf-8">
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2014 by max-3 (http://jsbin.com/tokek/80/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+  <title>JS Bin</title>
+
+<style id="jsbin-css">
+a#edit-with-js-bin {
+display: none !important;
+}
+body{
+  background: #9C7B3D;
+  font-family: Verdana;
+  padding: 0;
+  margin: 0;
+}
+/*
+
+
+/**
+ * T E S T
+ */
+
+.zclip1 {
+  background: rgba(0, 61, 255, 0.16);
+  border: dashed 1px red;
+}
+/**
+ *IMPUT
+ */
+#a-search-filter{
+  z-index:9999;
+  width: 87%;
+  left: 5%;
+  padding-left: 3% ;
+  top:5px;
+  height: 35px;
+  position: fixed;
+  /opacity: 0.9;
+  font-size:20px;
+  border-radius:5px;
+  border:none;
+  color:#777;
+  -webkit-box-shadow:  1px 1px 2px 0px rgba(11,11,11,0.5);
+     -moz-box-shadow:  1px 1px 2px 0px rgba(11,11,11,0.5);
+          box-shadow:  1px 1px 2px 0px rgba(11,11,11,0.5);
+   background:#fff url(http://weblabfon.com/_ld/0/25_paper01.jpg) repeat-x 0% 5%;
+
+}
+input, textarea { outline:none; }
+input:active, textarea:active { outline:none; }
+:focus { outline:none; }
+ input[type="text"]:focus { outline: none; }
+
+::-webkit-input-placeholder       {color:#777;text-indent: 0px;   transition: all 0.7s cubic-bezier(0.680, -0.550, 0.265, 1.550) 0.0s;}
+::-moz-placeholder                {color:#777;text-indent: 0px;   transition: all 0.7s cubic-bezier(0.680, -0.550, 0.265, 1.550) 0.0s;}
+:-moz-placeholder                 {color:#777;text-indent: 0px;   transition: all 0.7s cubic-bezier(0.680, -0.550, 0.265, 1.550) 0.0s;}
+:-ms-input-placeholder            {color:#777;text-indent: 0px;   transition: all 0.7s cubic-bezier(0.680, -0.550, 0.265, 1.550) 0.0s;}
+:focus::-webkit-input-placeholder {color:#ccc;text-indent: -500px; transition: text-indent 1.1s cubic-bezier(0.680, -0.550, 0.265, 1.550) 1.5s;}
+:focus::-moz-placeholder          {color:#ccc;text-indent: -500px; transition: text-indent 1.1s cubic-bezier(0.680, -0.550, 0.265, 1.550) 1.5s;}
+:focus:-moz-placeholder           {color:#ccc;text-indent: -500px; transition: text-indent 1.1s cubic-bezier(0.680, -0.550, 0.265, 1.550) 1.5s;}
+:focus:-ms-input-placeholder      {color:#ccc;text-indent: -500px; transition: text-indent 1.1s cubic-bezier(0.680, -0.550, 0.265, 1.550) 1.5s;}
+/**/
+
+
+/**
+ *LIST
+ */
+.LIST>div, .LIST>.active{
+  -webkit-transition: all 777ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+     -moz-transition: all 777ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+       -o-transition: all 777ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+          transition: all 777ms cubic-bezier(0.645, 0.045, 0.355, 1.000); /* easeInOutCubic */
+}
+.LIST>div:hover, .LIST>div:active{
+  -webkit-transition: all 0ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+     -moz-transition: all 0ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+       -o-transition: all 0ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+          transition: all 0ms cubic-bezier(0.645, 0.045, 0.355, 1.000); /* easeInOutCubic */
+}
+
+/*
+.LIST1{           background:red;}
+.LIST>div{       background:green;}
+.LIST>.active{   background:gold;}
+.LIST>div:hover {background:blue;}
+.LIST>div:active{background:violet;}
+*/
+.LIST              {color:#ccc;background:rgba(255,0,0,0.0);}
+.LIST>.li          {color:#432;background:#896C36;}
+.LIST>.li.active   {color:#777;background:#fff;}
+.LIST>.li:hover    {color:#000;background:#F9FFBD;}
+.LIST>.li.hover,
+.LIST>.active:hover{color:#777;background:#F9FFBD;}
+.LIST>.li:active   {color:#ccc;background:violet;}
+
+
+
+.SCROLL{
+  position: fixed;
+  height: 100%;
+  /background: red;
+  margin: 0;
+  padding: 0;
+}
+.mCSB_container {
+    //background: blue !important;
+  width: 100% !important;
+}
+.LIST{
+  position: relative;
+
+  height: 850px;
+  /width: 00px;
+  /overflow-y: scroll;
+  /position: fixed;
+  padding-top: 50px;
+}
+.LIST>.li{
+  border-radius:4px;
+  padding:5px;
+  cursor:pointer;
+  margin:4px;
+  margin-left:15px ;
+  margin-right:15px ;
+
+  height: 33px;
+  overflow: hidden;
+ -webkit-box-shadow: inset -0px 1px 3px 0px rgba(0,0,0,0.9);
+    -moz-box-shadow: inset -0px 1px 3px 0px rgba(0,0,0,0.9);
+         box-shadow: inset -0px 1px 3px 0px rgba(0,0,0,0.9);
+}
+
+
+.LIST>.li:hover, .LIST>.li.hover {
+   -webkit-box-shadow:  inset 1px 2px 3px 0px rgba(0,0,0,0.9);
+      -moz-box-shadow:  inset 1px 2px 3px 0px rgba(0,0,0,0.9);
+           box-shadow:  inset 1px 2px 3px 0px rgba(0,0,0,0.9);
+}
+
+
+
+
+
+
+/**
+ *LISTOFF
+ */
+ul{
+  opacity: 0;
+  z-index:-1;
+  position: fixed;
+  /background: red;
+  /border:dashed 1px gold; margin: 4px;
+}
+
+
+
+/*
+.LIST{
+  border:dashed 1px gold;
+// background: gold;
+//  background: #fefefe;
+//  position: relative;
+//  bottom: 0;
+//  left: 5%;
+//  width: 90%;
+//  min-height: 10px;
+//  opacity: 0.9;
+//  margin-top:100px;
+}
+.LIST>div{
+  padding: 5px;
+  margin: 3px;
+  background: #a99157;
+  min-width: 100px;
+  border-radius:4px;
+  -webkit-box-shadow: inset -0px 1px 3px 0px rgba(11,11,11,0.9);
+  -moz-box-shadow: inset -0px 1px 3px 0px rgba(11,11,11,0.9);
+  box-shadow: inset -0px 1px 3px 0px rgba(11,11,11,0.9);
+  //height: 40px;
+  //border-bottom: dotted 1px #777;
+  color:#322;
+  opacity: 0.5;
+}
+
+.active{
+opacity: 1.0 !important;
+  -webkit-box-shadow: inset -0px 1px 3px 0px rgba(11,11,11,0.9);
+  -moz-box-shadow: inset -0px 1px 3px 0px rgba(11,11,11,0.9);
+  box-shadow: inset -0px 1px 3px 0px rgba(11,11,11,0.9);
+  //height: 40px;
+  //border-bottom: dotted 1px #777;
+  color:#aaa;
+  background: #fff !important;
+  color:#000 !important;
+}
+
+
+
+
+.LIST>div:hover{
+  background: red;
+}
+
+
+
+
+
+
+
+#hist1{
+  background: green;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+/**
+ *Mem
+ */
+#mem1{
+  background: green;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ul1{
+  background: #f99;
+  border:dashed;
+}
+li1{
+  border:dashed #8ff;
+  background: #ff9;
+  padding: 5px;
+  margin: 5px;
+  opacity:0.1;
+}
+li1.activ1{
+ opacity:1;
+}
+li1.faint1{
+opacity:0.5;
+background: #ccc;
+color:#777;
+}
+li1.hover, li1:hover{
+ opacity:1.0;
+ background: orange;
+}
+li1.click, li:h{
+ opacity:1.0;
+ background: orange;
+}
+
+/**
+ *Hist
+ */
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ui>li{
+  z-index:0;
+}
+
+#a-search-filter{
+  z-index:13;
+  opacity: 0.9;
+  /background: red;
+  width: 90%;
+  height: 30px;
+  position: fixed;
+  top: 20px;
+  left: 10px;
+}
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+#txt{}
+#a-list-of-items{
+  z-index:-123;
+  opacity:0;
+  height:100px;
+  width:100px;
+  overflow:hidden;
+//position: fixed;
+ right: 0;
+  background: red;
+}
+
+li{
+-webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+   -moz-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+     -o-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+        transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1.000); /* easeInOutCubic */
+}/*
+li{
+
+  //opacity:1;
+  z-index:-10;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.zero{
+  background:#faa;
+  background: red;
+  //padding-left: 6px;
+  //height: 1px;
+  //border-top: dotted 0px #777;
+  //overflow: hidden;
+  //display: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 0;
+}
+.full{
+  overflow: hidden;
+  height: 50px;
+  background: #ccc;
+  padding-left: 6px;
+  border-top: dotted 1px #777;
+}
+/* Make sure all child elements cover the title *//*
+        body1 > * {
+            background-color: rgba(255, 255, 255, .8);
+            margin:0;
+            padding: 0.25em 1em;
+        }
+
+		/* clearfix *//*
+		body > *:after {
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: " ";
+			clear: both;
+			height: 0;
+		}
+
+        body {
+          float: right;
+          width: 50% !important;
+          height: 50% !important;
+            color: #333;
+            font-family: sans-serif;
+            //margin: 4.5em auto;
+            width: 40em;
+        }
+
+
+        h1 {
+            color: rgba(0,0,0,0.8);
+            font-size: 2em;
+            height: 1.5em;
+            left: 0;
+            position: fixed;
+            text-align: center;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        h2 {
+            font-size: 120%;
+            font-weight: bold;
+            margin-left: -2em;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 100%;
+            margin: 1em 0 2px -1px;
+            width:100%;
+        }
+
+
+
+
+</style>
+</head>
+<!--/**
+     *После 30 передалано
+     *http://jsbin.com/tokek/30/edit
+     */-->
+<body>
+
+<div>
+  <input autofocus type="text" name="filter" id="a-search-filter" placeholder="Начните набирать текст вопроса" value=""/>
+</div>
+ <div id="a-list-of-items">
+<div class="SCROLL">
+
+<div class="LIST">
+    <div class="li li1">Как называется крупнейшее месторождение янтаря?<span></span></div>
+    <div class="li li2">Учавствовала ли Юлия Тимошенко на паралимпиаде в Сочи?<span></span></div>
+    <div class="li li3">Как жрать всю неделю и похудеть на 20 килограмм<span></span></div>
+    <div class="li li4">Какое сходство между женщиной-программистом и морской свинкой?<span></span></div>
+    <div class="li li5">Что у Михаила Боярского под шляпой?<span></span></div>
+    <div class="li li6">Когда сломают нос Дмитрию Нагиеву?<span></span></div>
+    <div class="li li7">Академик, описавший явление электь ее применения для электроосвещения, электросварки и электропайки металлов? Петров<span></span></div>
+    <div class="li li8">Почему мы шлепаем девушку по попе, а она нас — по лицу?<span></span></div>
+    <div class="li li9">Где, когда и какого хрена вы родились?<span></span></div>
+    <div class="li li10">Град, который как верили древляне со временем превратится в полноценный город<span></span></div>
+<!--     <div class="li11">В их составе присутствуют биотит, роговая обманка <span>1701</span></div>
+    <div class="li12">Бухта, в которой П. С. Нахимов разгромил турецкий флот<span>Священники</span></div>
+    <div class="li13">Вацлав ("Щит и меч"), Владислав ("Бег"), Евгений ("Узник замка Иф") - творческая династия талантливых российских актеров<span>Захаров</span></div>
+    <div class="li14">Волокнистый минерал, "морская пенка".<span>Кальцит</span></div>
+    <div class="li15">Второе название бурого угля.<span>Диабазы</span></div>
+    <div class="li16">В Танзании и Канаде добывают характерные бесцветные кристаллы этого камня <span>Герман</span></div>
+    <div class="li17">В какой день недели Майкл Джексон покинул мир живых? <span>Петров</span></div>
+    <div class="li18">Дедушка ветров, упомянутый в "слове о полке игореве" <span>Сперанский</span></div>
+    <div class="li19">Джазовый музыкант "рот с рюкак"<span>Быкова</span></div>
+    <div class="li20">Древние римляне носили этот камень в руке чтобы вдыхать источаемый им аромат при нагреве?<span>Уваров</span></div> -->
+</div>
+</div>
+
+
+   <!--
+  <ul>
+
+  </ul>
+  </div>
+<div id="a-list-of-items"> -->
+  <ul>
+   <li><span>Автомобиль, скрипка и собака Клякса не появились бы на свет без Айболита-69, режиссера .... Быкова</span></li>
+   <li class='zero'><span>Автор записки об освобождении крестьян 1856. Кавелин</span></li>
+   <li class='zero'><span>Автор первого российского проекта республиканского устройства? Пестель</span></li>
+   <li class='zero'><span>Автор свода законов при николае 1? Сперанский</span></li>
+   <li class='full'><span>Автор современного самоучителя по основам музыкальной композиции "Ты? композитор", автор музыке к игре "Лабиринт" Челноков</span></li>
+   <li class='full'><span>Автор теории "официальной народности"? Уваров</span></li>
+   <li class='full'><span>Автор "Записки об освобождении крестьян" 1856 г? Кавелин</span></li>
+   <li class='zero'><span>Автор "Свода" законов при Николае I? Сперанский</span></li>
+   <li class='full'><span>Автомобиль, скрипка и собака Клякса не появились бы на свет без Айболита-69, режиссера .... Быкова</span></li>
+   <li class='full'><span>Автор записки об освобождении крестьян 1856. Кавелин</span></li>
+   <li class='zero'><span>Автор первого российского проекта республиканского устройства? Пестель</span></li>
+   <li class='full'><span>Автор свода законов при николае 1? Сперанский</span></li>
+   <li class='zero'><span>Автор современного самоучителя по основам музыкальной композиции "Ты? композитор", автор музыке к игре "Лабиринт" Челноков</span></li>
+   <li><span>Автор теории "официальной народности"? Уваров</span></li>
+   <li><span>Автор "Записки об освобождении крестьян" 1856 г? Кавелин</span></li>
+   <li><span>Автор "Свода" законов при Николае I? Сперанский</span></li>
+   <li><span>Автомобиль, скрипка и собака Клякса не появились бы на свет без Айболита-69, режиссера .... Быкова</span></li>
+   <li><span>Автор записки об освобождении крестьян 1856. Кавелин</span></li>
+   <li><span>Автор первого российского проекта республиканского устройства? Пестель</span></li>
+   <li><span>Автор свода законов при николае 1? Сперанский</span></li>
+   <li><span>Автор современного самоучителя по основам музыкальной композиции "Ты? композитор", автор музыке к игре "Лабиринт" Челноков</span></li>
+   <li><span>Автор теории "официальной народности"? Уваров</span></li>
+   <li><span>Автор "Записки об освобождении крестьян" 1856 г? Кавелин</span></li>
+   <li><span>Автор "Свода" законов при Николае I? Сперанский</span></li>
+  </ul>
+</div>  <!---->
+
+
+
+<link rel="stylesheet" href="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css" />
+<script src="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+
+
+<script>
+/*key = $(this).children().text(); */
+$(".li").zclip({
+        path: "ZeroClipboard.swf",
+        copy: function() {return $(this).children().text();},
+        beforeCopy:function(){
+            $("#copy").addClass("act");
+            $(this).children().css({
+                //"text-decoration": "line-through",
+                //"font-weight": "bolder1"
+            });
+        },
+        afterCopy:function(){
+            $("#copy").removeClass("act");
+            copied('+');
+            Ya('copy');
+        }
+    });
+
+
+
+
+
+/**
+*SCROLL
+*/
+(function($){
+        $(window).load(function(){
+            $(".SCROLL").mCustomScrollbar({
+    //theme:"dark"
+    //theme:"3d"
+    theme:"minimal-dark"
+    //theme:"rounded-dots-dark"
+    //theme:"rounded-dots"
+
+
+
+});
+
+        });
+    })(jQuery);
+//END SCROLL
+
+$(document).ready(function() {
+//  console.log(keys);
+$('#a-list-of-items>ul').html(keys);
+//$('#a-list-of-items>ul').html("<li><span>А10</span></li><li><span>А20</span>б</li><li><span>А30</span>бв</li><li><span>А40</span>бвг</li><li><span>А50</span>бвгд</li><li><span>А60</span>бвгде</li><li><span>А70</span>бвгдеё</li><li><span>А80</span>бвгдеё</li><li><span>А90</span>бвгдеёз</li><li><span>А100</span>бвгдеёзи</li>");
+//$('#a-list-of-items>ul').html("<li>один<span>10</span></li><li>два<span>20</span></li><li>три<span>30</span></li><li>четыре<span>40</span></li><li>пять<span>50</span></li><li>шесть<span>60</span></li><li>семь<span>7</span></li>");
+
+});//Еnd
+//var LIST = {};
+var LIST = {};
+var LISTOLD = {};
+var LISTSIZE = 10;
+                               //var qwe ="qwe";
+                               //LISTOLD[qwe] = "трололо1";
+                               //LISTOLD.q2 = "ололо2";
+                               //LISTOLD.q3 = "ололо3";
+                               /*LISTOLD.q4 = "ололо4";
+                               LISTOLD.q5 = "ололо5";
+                               LISTOLD.q6 = "ололо6";
+                               LISTOLD.q7 = "ололо7";
+                               LISTOLD.q8 = "ололо8";
+                               LISTOLD.q9 = "ололо9";
+                               LISTOLD.q10 = "ололо10";
+                               LISTOLD.q11 = "ололо11";
+                               LISTOLD.q12 = "ололо12";
+                               LISTOLD.q13 = "ололо13";
+                               LISTOLD.q14 = "ололо14";
+                               LISTOLD.q15 = "ололо15";
+                               LISTOLD.q16 = "ололо16";
+                               LISTOLD.q17 = "ололо17";
+                               LISTOLD.q18 = "ололо18";
+                               LISTOLD.q19 = "ололо19";
+                               LISTOLD.q20 = "ололо20";
+                               LISTOLD.q21 = "ололо21";
+                               LISTOLD.q22 = "ололо22";
+                               LISTOLD.q23 = "ололо23";
+                               LISTOLD.q24 = "ололо24";
+                               LISTOLD.q25 = "ололо25";
+                               LISTOLD.q26 = "ололо26";
+                               LISTOLD.q27 = "ололо27";
+                               LISTOLD.q28 = "ололо28";
+                               LISTOLD.q29 = "ололо29";
+                               LISTOLD.q30 = "ололо30";
+                               LISTOLD.q31 = "ололо31";*/
+
+
+function list(){
+  //console.clear();
+  console.log(cache[1]);
+  //var KEY23="qwe" ;
+  //var KEY22= "qwe";
+  //LIST[KEY23] = KEY22;
+}
+
+
+function test(){
+    var counter=0;
+    $(".active").removeClass('active');
+    $(".active").removeClass('active');
+
+    for (var key in LIST) {
+        counter++;
+        if(counter<21){
+            $(".li"+counter).html(key+':'+LIST[key]).addClass('active');
+        }
+        if(counter>20){
+            delete LIST[key];
+        }
+    }
+}
+
+$("#txt").click(function(){
+  list();
+  test();
+});
+
+
+/* THE DEMO */
+$(function() {
+    $('#a-search-filter').filterFor('ul', {caseSensitive : false, removeDiacritics : true});
+});
+
+/* THE ACTUAL CODE */
+(function($) {
+    var settings;
+    $.fn.extend({
+        filterFor: function(listSelector, options) {
+            settings = $.extend({
+                'caseSensitive' : true,
+                'removeDiacritics' : false,
+                // The list with keys to skip (esc, arrows, return, etc)
+                // 8 is backspace, removed for better usability
+                keys : [13, 27, 32, 37, 38, 39, 40 /*,8*/ ]
+                //@TODO:use if set? , 'map' : {}
+            }, options),
+            self = this,
+            $titles = $(listSelector),
+              cache = {} ;
+            if ($titles.length !== 0) {
+                if(!$titles.is('ul,ol')){
+                    $titles = $titles.find('ul,ol');
+                }
+                $titles = $titles.find('li');
+                $titles.each(function(index, node) {
+                   var   $node = $(node),
+                   text = $node.text();
+
+                   if(settings.removeDiacritics === true){
+                       text = text.removeDiacritics();
+                   }
+                   if(settings.caseSensitive === false){
+                       text = text.toLowerCase();
+                   }
+                   if (typeof cache[text] !== 'undefined') {
+                       // Another item with exactly the same text already exists
+                       cache[text] = cache[text].add($node);
+                   } else {
+                       cache[text] = $node;
+                   }
+               });
+
+               this.each(function(index, element) {
+                   var $element = $(element);
+                   $element.keyup(function(e) {
+                        if ($.inArray(e.keyCode, settings.keys) === -1) {
+                            var val = $element.val();
+
+                            if(settings.removeDiacritics === true){
+                                val = val.removeDiacritics();
+                            }
+                            if(settings.caseSensitive === false){
+                                val = val.toLowerCase();
+                            }
+                          /**
+                           *NEW ARRAY GENERATION
+                           */
+                            LIST = {};
+                            var coun = 0;//?3
+                            $.each(cache, function(text, $node) {
+                              if((text + '').indexOf(val) === -1) {
+                                   //$node.hide();//скрыть
+                               } else {
+                                   LIST[$node.children().html()] = $node.html();
+                                   //$node.show();//показать
+                                   coun++;//?3
+                                   if(coun==70){/*console.log("STOP ARRAY GENERATION");*/return false;}//?3
+                               }
+                           });
+                          /**
+                           *NEW ARRAY VIEW
+                           */
+                           var counter=0;
+                           //$(".LIST>div").hide();//скрыть//4?
+                           $(".active").removeClass('active');
+                           $.each(LIST, function(key) {///for (var key in LIST) {
+                               counter++;
+                               $(".li"+counter).html(LIST[key]).addClass('active');
+                               delete LISTOLD[key];//?
+                               if(counter>=LISTSIZE){/*onsole.log("STOP ARRAY VIEW");*/return false;}
+                           });///}
+                          /**
+                           *OLD VIEW
+                           */
+                           if(counter<LISTSIZE) {
+                               //console.log(LISTSIZE-counter+": полей надо заполнить");
+                               $.each(LISTOLD, function(keyOLD) {///for (var keyOLD in LISTOLD) {
+                               //console.log(keyOLD);
+                                 if(counter<=LISTSIZE){
+                                   counter++;
+                                   $(".li"+counter).html(LISTOLD[keyOLD]);//.addClass('QWE2');//див у которого нет класса QWE
+                                   }
+                               });///}
+                           }
+                          /**
+                           *OLD COPY
+                           */
+                           LISTOLD = {};
+                           $('.LIST>div').each(function(i,keyOLD) {
+                          		     LISTOLD[/*i+""+*/$(keyOLD).children().html()] = $(keyOLD).html();
+                               if ($(this).hasClass("li"+LISTSIZE)) {
+                          		     //console.log(i+1+"-пунктов");
+                                   return false;
+                          	   }
+                             //else {LISTOLD[/*i+""+*/$(keyOLD).children().html()] = $(keyOLD).html();}
+                          });
+
+
+//console.log("counter результат:"+counter);
+//console.log(LISTOLD);
+//console.log(LIST);
+                       }
+                   });
+               });
+           }
+           return this;
+       }
+   });
+}(jQuery));
+
+
+
+
+(function() {
+
+    // Based on source code at http://lehelk.com/2011/05/06/script-to-remove-diacritics/
+
+    function removeDiacritics(subject) {
+
+        if (!subject && this instanceof String) {
+            // We're being called as a method on the String Object
+            subject = this;
+        }
+
+        var diacriticsMap = {/*
+            'A': /[\u0041\u24B6\uFF21\u00C0\u00C1\u00C2\u1EA6\u1EA4\u1EAA\u1EA8\u00C3\u0100\u0102\u1EB0\u1EAE\u1EB4\u1EB2\u0226\u01E0\u00C4\u01DE\u1EA2\u00C5\u01FA\u01CD\u0200\u0202\u1EA0\u1EAC\u1EB6\u1E00\u0104\u023A\u2C6F]/g,
+            'AA': /[\uA732]/g,
+            'AE': /[\u00C6\u01FC\u01E2]/g,
+            'AO': /[\uA734]/g,
+            'AU': /[\uA736]/g,
+            'AV': /[\uA738\uA73A]/g,
+            'AY': /[\uA73C]/g,
+            /**/
+
+//'1':  /[Пп][Ее][Рр][Вв][Ыы][ЙйИи]|[Пп][Ее][Рр][Вв][Ыы]|[Пп][Ее][Рр][Вв]|[Пп][Ее][Рр]|[Оо][Дд][Ии][Нн]|[Оо][Дд][Ии]|[Ее][Рр][Вв][Ыы][ЙйИи]|[Рр][Вв][Ыы][ЙйИи]|[Вв][Ыы][ЙйИи]|[Ыы][ЙйИи]|[ЙйИи]|[Дд][Ии][Нн]|[Ии][Нн]|[Нн]|\b[Ii]\b/g,
+//'2':  /[Вв][Тт][Оо][Рр][Оо][ЙйИи]|[Вв][Тт][Оо][Рр][Оо]|[Вв][Тт][Оо][Рр]|[Вв][Тт][Оо]|[Дд][Вв][Аа]|[Тт][Оо][Рр][Оо][ЙйИи]|[Оо][Рр][Оо][ЙйИи]|[Рр][Оо][ЙйИи]|[Оо][ЙйИи]|[ЙйИи]|[Вв][Аа]|[Аа]|\b[Ii][Ii]\b/g,
+//'3':  /[Тт][Рр][Ии]|[Тт][Рр][Ее][Тт][ИиЙй][ИиЙй]|[Тт][Рр][Ее][Тт][ИиЙй]|[Тт][Рр][Ее][Тт]|[Тт][Рр][Ее]|[Тт][Рр]|[Рр][Ее][Тт][ИиЙй][ИиЙй]|[Ее][Тт][ИиЙй][ИиЙй]|[Тт][ИиЙй][ИиЙй]|[РрИиЙй][ИиЙй]|[ИиЙй]|\b[Ii][Ii][Ii]\b/g,
+//'4':  /[Чч][Ее][Тт][Вв][Ёё][Рр][Тт][Ыы][Йй]|[Чч][Ее][Тт][Вв][Ёё][Рр][Тт][Ыы]|[Чч][Ее][Тт][Вв][Ёё][Рр][Тт]|[Чч][Ее][Тт][Вв][Ёё][Рр]|[Чч][Ее][Тт][Вв][Ёё]|[Чч][Ее][Тт][Вв]|[Чч][Ее][Тт][Ыы][Рр][Ее]|[Чч][Ее][Тт][Ыы][Рр]|[Чч][Ее][Тт][Ыы]|[Чч][Ее][Тт]|[Ее][Тт][Вв][Ёё][Рр][Тт][Ыы][Йй]|[Тт][Вв][Ёё][Рр][Тт][Ыы][Йй]|[Вв][Ёё][Рр][Тт][Ыы][Йй]|[Ёё][Рр][Тт][Ыы][Йй]|[Рр][Тт][Ыы][Йй]|[Тт][Ыы][Йй]|[Ыы][Йй]|[Йй]|[Ее][Тт][Ыы][Рр][Ее]|[Тт][Ыы][Рр][Ее]|[Ыы][Рр][Ее]|[Рр][Ее]|[Ее]|\b[Ii][Vv]\b/g,
+//'5':  /[Пп][Яя][Тт][Ыы][Йй]|[Пп][Яя][Тт]|[Пп][Яя][Тт][Ыы]|[Пп][Яя][Тт][Ьь]|[Пп][Яя][Тт]|[Яя][Тт][Ьь]|[Тт][Ьь]|[Ьь]|[Яя][Тт][Ыы][Йй]|[Тт][Ыы][Йй]|[Ыы][Йй]|[Йй]|\b[Vv]\b/g,
+//'г': /[Гг][Оо][Дд][Уу]|[Гг][Оо][Дд][Аа]|[Гг][Оо][Дд]|[Гг][Оо]|[Оо][Дд][Aa]|[Оо][Дд][Уу]|[Оо][Дд]|[Дд][Aa]|[Дд][Уу]|[Уу]|[Гг]|[Дд]|[Aa]/g,
+//'в': /[Вв][Ее][Кк][Ее]|[Вв][Ее][Кк][Аа]|[Вв][Ее][Кк]|[Вв][Ее]|[Ее][Кк][Aa]|[Ее][Кк][Ее]|[Ее][Кк]|[Кк][Аа]|[Кк][Уу]|[Уу]|[Вв]|[Кк]|[Aa]/g,
+/////'первый': /один|оди|од|дин|ин|н|1|\bi\b/igm,
+/////'второй': /два|дв|ва|а|2|\bii\b/igm,
+/////'третий': /три|тр|ри|и|3|\biii\b/igm,
+/////'четвёртый': /четыре|четыр|четы|чет|етыре|тыре|ыре|ре|е|4|\biv\b/igm,
+/////'пятый': /пять|пят|пя|ять|ть|5|\bv\b/igm,
+//'первый':    /первый|первы|перв|пер|пе|ервый|рвый|вый|ый|й|один|оди|од|дин|ин|н|1|\bi\b/igm,
+//'2':    /второй|второ|втор|вто|вт|торой|орой|рой|ой|й|два|дв|ва|а|2|\bii\b/ig,
+//'3':    /третий|трети|трет|тре|тр|ретий|етий|тий|ий|й|три|тр|ри|и|3|\biii\b/ig,
+//'четвёртый': /четвёртый|четвёрты|четвёрт|четвёр|четвё|четв|етвёртый|твёртый|вёртый|ёртый|ртый|тый|ый|й|четыре|четыр|четы|чет|етыре|тыре|ыре|ре|е|4|\biv\b/igm,
+//'пятый':     /пятый|пяты|ятый|тый|ый|й|пять|пят|пя|ять|ть|5|\bv\b/igm,
+//первый|первы|перв|пер|пе|ервый|рвый|вый|ый|й|
+//второй|второ|втор|тор|ор|торой|орой|рой|ой|й|
+//четвёртый|четвёрты|четвёрт|четвёр|четвё|четв|етвёртый|твёртый|вёртый|ёртый|ртый|тый|ый|й|
+//пятый|пяты|ятый|тый|ый|й|
+//
+//      //'I':   /1/g,
+//      //'II':   /2\b|ii\b|II\b/g,
+//      'II':   /2\b/g,
+//      'III':   /3\b/g,
+//      'IV':   /4\b/g,
+//      //'V':   /5/g,
+//      //'VI':   /6\b/g,
+//      //'VII':   /7\b/g,
+//      //'VIII':   /8\b/g,
+//      //'IX':    /9/g,
+//      //'X':   /10/g,
+//      'XI':    /11\b/g,
+//      'XII':   /12\b/g,
+//      'XIII':  /13\b/g,
+//      'XIV':   /14\b/g,
+//      'XV':    /15\b/g,
+//      'XVI':   /16\b/g,
+//      'XVII':  /17\b/g,
+//      'XVIII': /18\b/g,
+//      'XIX':   /19\b/g,
+//      'XX':    /20\b/g,
+//      'XXI':   /21\b/g,
+////'ъ': /[ЪъЬь]/g,
+////'ь': /[ЪъЬь]/g,
+
+/**/              /*
+                  'первый':    /один|1|\bi\b/igm,
+                  'второй':    /два|две|2|\bii\b/igm,
+                  'третий':    /три|3|\biii\b/igm,
+                  'пятый':     /пять|5|\bv\b/igm,
+                  'четвертый': /четыре|4|\biv\b/igm,
+                  'шестой':    /6|\bvi\b/igm,
+                  'седьмой':   /7|\bvii\b/igm,
+                  'восьмой':   /8|\bviii\b/igm,
+                  'девятый':   /9|\bix\b/igm,
+                  '10':       /\bx\b/igm,
+                  '11':       /\bxi\b/igm,
+                  '12':       /\bxii\b/igm,
+                  '13':       /\bxiii\b/igm,
+                  '14':       /\bxiv\b/igm,
+                  '15':       /\bxv\b/igm,
+                  '16':       /\bxvi\b/igm,
+                  '17':       /\bxvii\b/igm,
+                  '18':       /\bxviii\b/igm,
+                  '19':       /\bxix\b/igm,
+                  '20':       /\bxx\b/igm,
+                  '21':       /\bxxi\b/igm,
+                  '': /[ьъ\,\.\?\!\-\'\"\[\]\(\)\;\:]|\s/igm,
+                  'жи': /ж[ыи]/igm,
+                  'ши': /ш[ыи]/igm,
+                  'ё': /[её]/igm,
+                  'и': /[ий]/igm,
+//'году': /года|год|го|ода|од|да|д|а|г/igm,
+//'веков': /века|веку|век|ве|еку|ека|ка|ку|ек|а|к|у|в/igm,
+/*QWERTY>>>ЙЦУКЕН*//*
+'f': /а/igm,
+',': /б/igm,
+'d': /в/igm,
+'u': /г/igm,
+'l': /д/igm,
+'t': /е/igm,
+'`': /ё/igm,
+';': /ж/igm,
+'p': /з/igm,
+'b': /и/igm,
+'q': /й/igm,
+'r': /к/igm,
+'k': /л/igm,
+'v': /м/igm,
+'y': /н/igm,
+'j': /о/igm,
+'g': /п/igm,
+'h': /р/igm,
+'c': /с/igm,
+'n': /т/igm,
+'e': /у/igm,
+'a': /ф/igm,
+'[': /х/igm,
+'w': /ц/igm,
+'x': /ч/igm,
+'i': /ш/igm,
+'o': /щ/igm,
+']': /ъ/igm,
+'s': /ы/igm,
+'m': /ь/igm,
+"'": /э/igm,
+'.': /ю/igm,
+'z': /я/igm,
+/**/
+/*translit*//*
+          'a': /а/igm,
+          'b': /б/igm,
+          'v': /в/igm,
+          'g': /г/igm,
+          'd': /д/igm,
+          'e': /е/igm,
+          '': /ё/igm,
+          '': /ж/igm,
+          'z': /з/igm,
+          'i': /и/igm,
+          '': /й/igm,
+          'k': /к/igm,
+          'l': /л/igm,
+          'm': /м/igm,
+          'n': /н/igm,
+          'o': /о/igm,
+          'p': /п/igm,
+          'r': /р/igm,
+          's': /с/igm,
+          't': /т/igm,
+          '': /у/igm,
+          'f': /ф/igm,
+          'h': /х/igm,
+          'c': /ц/igm,
+          '': /ч/igm,
+          '': /ш/igm,
+          '': /щ/igm,
+          '': /ъ/igm,
+          '': /ы/igm,
+          '': /ь/igm,
+          '': /э/igm,
+          '': /ю/igm,
+          '': /я/igm,
+/**/
+/*
+            'B': /[\u0042\u24B7\uFF22\u1E02\u1E04\u1E06\u0243\u0182\u0181]/g,
+            'C': /[\u0043\u24B8\uFF23\u0106\u0108\u010A\u010C\u00C7\u1E08\u0187\u023B\uA73E]/g,
+            'D': /[\u0044\u24B9\uFF24\u1E0A\u010E\u1E0C\u1E10\u1E12\u1E0E\u0110\u018B\u018A\u0189\uA779]/g,
+            'DZ': /[\u01F1\u01C4]/g,
+            'Dz': /[\u01F2\u01C5]/g,
+            'E': /[\u0045\u24BA\uFF25\u00C8\u00C9\u00CA\u1EC0\u1EBE\u1EC4\u1EC2\u1EBC\u0112\u1E14\u1E16\u0114\u0116\u00CB\u1EBA\u011A\u0204\u0206\u1EB8\u1EC6\u0228\u1E1C\u0118\u1E18\u1E1A\u0190\u018E]/g,
+            'F': /[\u0046\u24BB\uFF26\u1E1E\u0191\uA77B]/g,
+            'G': /[\u0047\u24BC\uFF27\u01F4\u011C\u1E20\u011E\u0120\u01E6\u0122\u01E4\u0193\uA7A0\uA77D\uA77E]/g,
+            'H': /[\u0048\u24BD\uFF28\u0124\u1E22\u1E26\u021E\u1E24\u1E28\u1E2A\u0126\u2C67\u2C75\uA78D]/g,
+            'I': /[\u0049\u24BE\uFF29\u00CC\u00CD\u00CE\u0128\u012A\u012C\u0130\u00CF\u1E2E\u1EC8\u01CF\u0208\u020A\u1ECA\u012E\u1E2C\u0197]/g,
+            'J': /[\u004A\u24BF\uFF2A\u0134\u0248]/g,
+            'K': /[\u004B\u24C0\uFF2B\u1E30\u01E8\u1E32\u0136\u1E34\u0198\u2C69\uA740\uA742\uA744\uA7A2]/g,
+            'L': /[\u004C\u24C1\uFF2C\u013F\u0139\u013D\u1E36\u1E38\u013B\u1E3C\u1E3A\u0141\u023D\u2C62\u2C60\uA748\uA746\uA780]/g,
+            'LJ': /[\u01C7]/g,
+            'Lj': /[\u01C8]/g,
+            'M': /[\u004D\u24C2\uFF2D\u1E3E\u1E40\u1E42\u2C6E\u019C]/g,
+            'N': /[\u004E\u24C3\uFF2E\u01F8\u0143\u00D1\u1E44\u0147\u1E46\u0145\u1E4A\u1E48\u0220\u019D\uA790\uA7A4]/g,
+            'NJ': /[\u01CA]/g,
+            'Nj': /[\u01CB]/g,
+            'O': /[\u004F\u24C4\uFF2F\u00D2\u00D3\u00D4\u1ED2\u1ED0\u1ED6\u1ED4\u00D5\u1E4C\u022C\u1E4E\u014C\u1E50\u1E52\u014E\u022E\u0230\u00D6\u022A\u1ECE\u0150\u01D1\u020C\u020E\u01A0\u1EDC\u1EDA\u1EE0\u1EDE\u1EE2\u1ECC\u1ED8\u01EA\u01EC\u00D8\u01FE\u0186\u019F\uA74A\uA74C]/g,
+            'OI': /[\u01A2]/g,
+            'OO': /[\uA74E]/g,
+            'OU': /[\u0222]/g,
+            'P': /[\u0050\u24C5\uFF30\u1E54\u1E56\u01A4\u2C63\uA750\uA752\uA754]/g,
+            'Q': /[\u0051\u24C6\uFF31\uA756\uA758\u024A]/g,
+            'R': /[\u0052\u24C7\uFF32\u0154\u1E58\u0158\u0210\u0212\u1E5A\u1E5C\u0156\u1E5E\u024C\u2C64\uA75A\uA7A6\uA782]/g,
+            'S': /[\u0053\u24C8\uFF33\u1E9E\u015A\u1E64\u015C\u1E60\u0160\u1E66\u1E62\u1E68\u0218\u015E\u2C7E\uA7A8\uA784]/g,
+            'T': /[\u0054\u24C9\uFF34\u1E6A\u0164\u1E6C\u021A\u0162\u1E70\u1E6E\u0166\u01AC\u01AE\u023E\uA786]/g,
+            'TZ': /[\uA728]/g,
+            'U': /[\u0055\u24CA\uFF35\u00D9\u00DA\u00DB\u0168\u1E78\u016A\u1E7A\u016C\u00DC\u01DB\u01D7\u01D5\u01D9\u1EE6\u016E\u0170\u01D3\u0214\u0216\u01AF\u1EEA\u1EE8\u1EEE\u1EEC\u1EF0\u1EE4\u1E72\u0172\u1E76\u1E74\u0244]/g,
+            'V': /[\u0056\u24CB\uFF36\u1E7C\u1E7E\u01B2\uA75E\u0245]/g,
+            'VY': /[\uA760]/g,
+            'W': /[\u0057\u24CC\uFF37\u1E80\u1E82\u0174\u1E86\u1E84\u1E88\u2C72]/g,
+            'X': /[\u0058\u24CD\uFF38\u1E8A\u1E8C]/g,
+            'Y': /[\u0059\u24CE\uFF39\u1EF2\u00DD\u0176\u1EF8\u0232\u1E8E\u0178\u1EF6\u1EF4\u01B3\u024E\u1EFE]/g,
+            'Z': /[\u005A\u24CF\uFF3A\u0179\u1E90\u017B\u017D\u1E92\u1E94\u01B5\u0224\u2C7F\u2C6B\uA762]/g,
+            'a': /[\u0061\u24D0\uFF41\u1E9A\u00E0\u00E1\u00E2\u1EA7\u1EA5\u1EAB\u1EA9\u00E3\u0101\u0103\u1EB1\u1EAF\u1EB5\u1EB3\u0227\u01E1\u00E4\u01DF\u1EA3\u00E5\u01FB\u01CE\u0201\u0203\u1EA1\u1EAD\u1EB7\u1E01\u0105\u2C65\u0250]/g,
+            'aa': /[\uA733]/g,
+            'ae': /[\u00E6\u01FD\u01E3]/g,
+            'ao': /[\uA735]/g,
+            'au': /[\uA737]/g,
+            'av': /[\uA739\uA73B]/g,
+            'ay': /[\uA73D]/g,
+            'b': /[\u0062\u24D1\uFF42\u1E03\u1E05\u1E07\u0180\u0183\u0253]/g,
+            'c': /[\u0063\u24D2\uFF43\u0107\u0109\u010B\u010D\u00E7\u1E09\u0188\u023C\uA73F\u2184]/g,
+            'd': /[\u0064\u24D3\uFF44\u1E0B\u010F\u1E0D\u1E11\u1E13\u1E0F\u0111\u018C\u0256\u0257\uA77A]/g,
+            'dz': /[\u01F3\u01C6]/g,
+            'e': /[\u0065\u24D4\uFF45\u00E8\u00E9\u00EA\u1EC1\u1EBF\u1EC5\u1EC3\u1EBD\u0113\u1E15\u1E17\u0115\u0117\u00EB\u1EBB\u011B\u0205\u0207\u1EB9\u1EC7\u0229\u1E1D\u0119\u1E19\u1E1B\u0247\u025B\u01DD]/g,
+            'f': /[\u0066\u24D5\uFF46\u1E1F\u0192\uA77C]/g,
+            'g': /[\u0067\u24D6\uFF47\u01F5\u011D\u1E21\u011F\u0121\u01E7\u0123\u01E5\u0260\uA7A1\u1D79\uA77F]/g,
+            'h': /[\u0068\u24D7\uFF48\u0125\u1E23\u1E27\u021F\u1E25\u1E29\u1E2B\u1E96\u0127\u2C68\u2C76\u0265]/g,
+            'hv': /[\u0195]/g,
+            'i': /[\u0069\u24D8\uFF49\u00EC\u00ED\u00EE\u0129\u012B\u012D\u00EF\u1E2F\u1EC9\u01D0\u0209\u020B\u1ECB\u012F\u1E2D\u0268\u0131]/g,
+            'j': /[\u006A\u24D9\uFF4A\u0135\u01F0\u0249]/g,
+            'k': /[\u006B\u24DA\uFF4B\u1E31\u01E9\u1E33\u0137\u1E35\u0199\u2C6A\uA741\uA743\uA745\uA7A3]/g,
+            'l': /[\u006C\u24DB\uFF4C\u0140\u013A\u013E\u1E37\u1E39\u013C\u1E3D\u1E3B\u017F\u0142\u019A\u026B\u2C61\uA749\uA781\uA747]/g,
+            'lj': /[\u01C9]/g,
+            'm': /[\u006D\u24DC\uFF4D\u1E3F\u1E41\u1E43\u0271\u026F]/g,
+            'n': /[\u006E\u24DD\uFF4E\u01F9\u0144\u00F1\u1E45\u0148\u1E47\u0146\u1E4B\u1E49\u019E\u0272\u0149\uA791\uA7A5]/g,
+            'nj': /[\u01CC]/g,
+            'o': /[\u006F\u24DE\uFF4F\u00F2\u00F3\u00F4\u1ED3\u1ED1\u1ED7\u1ED5\u00F5\u1E4D\u022D\u1E4F\u014D\u1E51\u1E53\u014F\u022F\u0231\u00F6\u022B\u1ECF\u0151\u01D2\u020D\u020F\u01A1\u1EDD\u1EDB\u1EE1\u1EDF\u1EE3\u1ECD\u1ED9\u01EB\u01ED\u00F8\u01FF\u0254\uA74B\uA74D\u0275]/g,
+            'oi': /[\u01A3]/g,
+            'ou': /[\u0223]/g,
+            'oo': /[\uA74F]/g,
+            'p': /[\u0070\u24DF\uFF50\u1E55\u1E57\u01A5\u1D7D\uA751\uA753\uA755]/g,
+            'q': /[\u0071\u24E0\uFF51\u024B\uA757\uA759]/g,
+            'r': /[\u0072\u24E1\uFF52\u0155\u1E59\u0159\u0211\u0213\u1E5B\u1E5D\u0157\u1E5F\u024D\u027D\uA75B\uA7A7\uA783]/g,
+            's': /[\u0073\u24E2\uFF53\u00DF\u015B\u1E65\u015D\u1E61\u0161\u1E67\u1E63\u1E69\u0219\u015F\u023F\uA7A9\uA785\u1E9B]/g,
+            't': /[\u0074\u24E3\uFF54\u1E6B\u1E97\u0165\u1E6D\u021B\u0163\u1E71\u1E6F\u0167\u01AD\u0288\u2C66\uA787]/g,
+            'tz': /[\uA729]/g,
+            'u': /[\u0075\u24E4\uFF55\u00F9\u00FA\u00FB\u0169\u1E79\u016B\u1E7B\u016D\u00FC\u01DC\u01D8\u01D6\u01DA\u1EE7\u016F\u0171\u01D4\u0215\u0217\u01B0\u1EEB\u1EE9\u1EEF\u1EED\u1EF1\u1EE5\u1E73\u0173\u1E77\u1E75\u0289]/g,
+            'v': /[\u0076\u24E5\uFF56\u1E7D\u1E7F\u028B\uA75F\u028C]/g,
+            'vy': /[\uA761]/g,
+            'w': /[\u0077\u24E6\uFF57\u1E81\u1E83\u0175\u1E87\u1E85\u1E98\u1E89\u2C73]/g,
+            'x': /[\u0078\u24E7\uFF58\u1E8B\u1E8D]/g,
+            'y': /[\u0079\u24E8\uFF59\u1EF3\u00FD\u0177\u1EF9\u0233\u1E8F\u00FF\u1EF7\u1E99\u1EF5\u01B4\u024F\u1EFF]/g,
+            'z': /[\u007A\u24E9\uFF5A\u017A\u1E91\u017C\u017E\u1E93\u1E95\u01B6\u0225\u0240\u2C6C\uA763]/g
+     /**/   };
+
+        for (var key in diacriticsMap) {
+            subject = subject.replace(diacriticsMap[key], key);
+        }
+
+        return subject;
+    }
+
+/*
+        This adds the function to the String Object, making it possible to  call
+        it like this:
+            var string = 'Xin chào thế giới';
+            string = string.removeDiacritics(); // string is now 'Xin chao the gioi!'
+     */
+    String.prototype.removeDiacritics = removeDiacritics;
+
+
+/*
+        This adds the function to the global namespace, making it possible to
+        call it like an normal function like this:
+            var string = 'Xin chào thế giới';
+            string = removeDiacritics(string); // string is now 'Xin chao the gioi!'
+     */
+//  window.removeDiacritics = removeDiacritics;
+
+/*
+        This adds the function to JQuery as a plugin, making it possible to call
+        it like any other JQuery plugin:
+            var html = '<span>Xin chào thế giới</span>';
+            $(html).removeDiacritics(); // html is now '<span>Xin chao the gioi!</span>'
+     */
+    jQuery.fn.extend({
+        removeDiacritics: function(element, options) {
+            $(this).each(function(i, e) {
+                var c = $(this).children();
+                if (c.length > 0) {
+                    $(c).removeDiacritics();
+                } else {
+                    $(this).text(removeDiacritics($(this).text()));
+                }
+            });
+        }
+    });
+
+}(jQuery));
+</script>
+</body>
+</html>
