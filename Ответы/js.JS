@@ -772,7 +772,7 @@ function loadContent(element_id) {
  */
 function win() {
   var params = 'scrollbars=yes,location=no,status=no,toolbar=no,menubar=no,status=no,width=383,height=483,left=10,top=85';
-  window.open('https://googledrive.com/host/0B0zTgDj4fTXrams5M0F3c2d3Z3c/Ответы', 'Ответы', params);
+  window.open('https://labirint1.github.io/ответы/', 'Ответы', params);
 }
 
 function winShare() {
