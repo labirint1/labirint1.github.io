@@ -16,7 +16,7 @@ $(function () {
 
 
 
-  var key = "Ответы на вопросы из лабиринта http://vk.cc/2JB4tq";
+  var key = "Ответы на вопросы из лабиринта https://labirint1.github.io/%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%8B/";
   /**
    *hover button
    */
