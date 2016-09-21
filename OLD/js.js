@@ -217,7 +217,8 @@ $(function () {
    *Zclip
    */
   $(".ZC>div").zclip({
-    path: "ZeroClipboard.swf",
+    path: "https://labirint1.github.io/OLD/ZeroClipboard.swf",
+    //    path: "ZeroClipboard.swf",
     copy: function () {
       return key;
     },
