@@ -777,7 +777,7 @@ function win() {
 
 function winShare() {
   var params = 'scrollbars=yes,location=no,status=no,toolbar=no,menubar=no,status=no,width=383,height=483,left=10,top=85';
-  window.open('http://vk.com/share.php?url=https://googledrive.com/host/0B0zTgDj4fTXrams5M0F3c2d3Z3c/Ответы/', 'share', params);
+  window.open('http://vk.com/share.php?url=https://labirint1.github.io/ответы/', 'share', params);
 }
 /**
  *notifi for close
