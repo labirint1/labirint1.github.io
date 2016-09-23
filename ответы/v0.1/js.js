@@ -7,7 +7,7 @@ $(".txt>div:even").addClass("txtEven");
 $(".txt>div:odd").addClass("txtOdd");
 
 var Null = 0;
-var key = "Ответы на вопросы из лабиринта http://vk.cc/2JB4tq";
+var key = "Ответы на вопросы из лабиринта https://labirint1.github.io/ответы";
 function checkon() {
   $(".check").css({"background": "url(http://static.tumblr.com/upanoab/0hOmmcbuh/tick-sprite.png) no-repeat -23px" });
 
@@ -48,7 +48,7 @@ function checkoff() {
 });
   /*флешку на кнопки*/
   $(".subscribe-submit, #submit").zclip({
-  path: "https://googledrive.com/host/0B0zTgDj4fTXrOGVlWTI2ZnZyY1k/v0.1/ZeroClipboard.swf",
+  path: "https://labirint1.github.io/OLD/ZeroClipboard.swf",
   copy: function() {return key;},
   beforeCopy:function(){
    $(this).children().css({
