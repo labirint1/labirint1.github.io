@@ -1,0 +1,484 @@
+a#edit-with-js-bin {
+      display: none !important;
+    }
+
+    body {
+      background: #9C7B3D;
+      font-family: Verdana;
+      padding: 0;
+      margin: 0;
+    }
+    /*
+
+
+/**
+ * T E S T
+ */
+
+    .zclip1 {
+      background: rgba(0, 61, 255, 0.16);
+      border: dashed 1px red;
+    }
+    /**
+ *IMPUT
+ */
+
+    #a-search-filter {
+      z-index: 9999;
+      width: 87%;
+      left: 5%;
+      padding-left: 3%;
+      top: 5px;
+      height: 35px;
+      position: fixed;
+      /opacity: 0.9;
+      font-size: 20px;
+      border-radius: 5px;
+      border: none;
+      color: #777;
+      -webkit-box-shadow: 1px 1px 2px 0px rgba(11, 11, 11, 0.5);
+      -moz-box-shadow: 1px 1px 2px 0px rgba(11, 11, 11, 0.5);
+      box-shadow: 1px 1px 2px 0px rgba(11, 11, 11, 0.5);
+      background: #fff url(http://weblabfon.com/_ld/0/25_paper01.jpg) repeat-x 0% 5%;
+    }
+
+    input,
+    textarea {
+      outline: none;
+    }
+
+    input:active,
+    textarea:active {
+      outline: none;
+    }
+
+    :focus {
+      outline: none;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+    }
+
+    ::-webkit-input-placeholder {
+      color: #777;
+      text-indent: 0px;
+      transition: all 0.7s cubic-bezier(0.680, -0.550, 0.265, 1.550) 0.0s;
+    }
+
+    ::-moz-placeholder {
+      color: #777;
+      text-indent: 0px;
+      transition: all 0.7s cubic-bezier(0.680, -0.550, 0.265, 1.550) 0.0s;
+    }
+
+    :-moz-placeholder {
+      color: #777;
+      text-indent: 0px;
+      transition: all 0.7s cubic-bezier(0.680, -0.550, 0.265, 1.550) 0.0s;
+    }
+
+    :-ms-input-placeholder {
+      color: #777;
+      text-indent: 0px;
+      transition: all 0.7s cubic-bezier(0.680, -0.550, 0.265, 1.550) 0.0s;
+    }
+
+    :focus::-webkit-input-placeholder {
+      color: #ccc;
+      text-indent: -500px;
+      transition: text-indent 1.1s cubic-bezier(0.680, -0.550, 0.265, 1.550) 1.5s;
+    }
+
+    :focus::-moz-placeholder {
+      color: #ccc;
+      text-indent: -500px;
+      transition: text-indent 1.1s cubic-bezier(0.680, -0.550, 0.265, 1.550) 1.5s;
+    }
+
+    :focus:-moz-placeholder {
+      color: #ccc;
+      text-indent: -500px;
+      transition: text-indent 1.1s cubic-bezier(0.680, -0.550, 0.265, 1.550) 1.5s;
+    }
+
+    :focus:-ms-input-placeholder {
+      color: #ccc;
+      text-indent: -500px;
+      transition: text-indent 1.1s cubic-bezier(0.680, -0.550, 0.265, 1.550) 1.5s;
+    }
+    /**/
+    /**
+ *LIST
+ */
+
+    .LIST>div,
+    .LIST>.active {
+      -webkit-transition: all 777ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      -moz-transition: all 777ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      -o-transition: all 777ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      transition: all 777ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      /* easeInOutCubic */
+    }
+
+    .LIST>div:hover,
+    .LIST>div:active {
+      -webkit-transition: all 0ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      -moz-transition: all 0ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      -o-transition: all 0ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      transition: all 0ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      /* easeInOutCubic */
+    }
+    /*
+.LIST1{           background:red;}
+.LIST>div{       background:green;}
+.LIST>.active{   background:gold;}
+.LIST>div:hover {background:blue;}
+.LIST>div:active{background:violet;}
+*/
+
+    .LIST {
+      color: #ccc;
+      background: rgba(255, 0, 0, 0.0);
+    }
+
+    .LIST>.li {
+      color: #432;
+      background: #896C36;
+    }
+
+    .LIST>.li.active {
+      color: #777;
+      background: #fff;
+    }
+
+    .LIST>.li:hover {
+      color: #000;
+      background: #F9FFBD;
+    }
+
+    .LIST>.li.hover,
+    .LIST>.active:hover {
+      color: #777;
+      background: #F9FFBD;
+    }
+
+    .LIST>.li:active {
+      color: #ccc;
+      background: violet;
+    }
+
+    .SCROLL {
+      position: fixed;
+      height: 100%;
+      /background: red;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mCSB_container {
+      //background: blue !important;
+      width: 100% !important;
+    }
+
+    .LIST {
+      position: relative;
+      height: 850px;
+      /width: 00px;
+      /overflow-y: scroll;
+      /position: fixed;
+      padding-top: 50px;
+    }
+
+    .LIST>.li {
+      border-radius: 4px;
+      padding: 5px;
+      cursor: pointer;
+      margin: 4px;
+      margin-left: 15px;
+      margin-right: 15px;
+      height: 33px;
+      overflow: hidden;
+      -webkit-box-shadow: inset -0px 1px 3px 0px rgba(0, 0, 0, 0.9);
+      -moz-box-shadow: inset -0px 1px 3px 0px rgba(0, 0, 0, 0.9);
+      box-shadow: inset -0px 1px 3px 0px rgba(0, 0, 0, 0.9);
+    }
+
+    .LIST>.li:hover,
+    .LIST>.li.hover {
+      -webkit-box-shadow: inset 1px 2px 3px 0px rgba(0, 0, 0, 0.9);
+      -moz-box-shadow: inset 1px 2px 3px 0px rgba(0, 0, 0, 0.9);
+      box-shadow: inset 1px 2px 3px 0px rgba(0, 0, 0, 0.9);
+    }
+    /**
+ *LISTOFF
+ */
+
+    ul {
+      opacity: 0;
+      z-index: -1;
+      position: fixed;
+      /background: red;
+      /border: dashed 1px gold;
+      margin: 4px;
+    }
+    /*
+.LIST{
+  border:dashed 1px gold;
+// background: gold;
+//  background: #fefefe;
+//  position: relative;
+//  bottom: 0;
+//  left: 5%;
+//  width: 90%;
+//  min-height: 10px;
+//  opacity: 0.9;
+//  margin-top:100px;
+}
+.LIST>div{
+  padding: 5px;
+  margin: 3px;
+  background: #a99157;
+  min-width: 100px;
+  border-radius:4px;
+  -webkit-box-shadow: inset -0px 1px 3px 0px rgba(11,11,11,0.9);
+  -moz-box-shadow: inset -0px 1px 3px 0px rgba(11,11,11,0.9);
+  box-shadow: inset -0px 1px 3px 0px rgba(11,11,11,0.9);
+  //height: 40px;
+  //border-bottom: dotted 1px #777;
+  color:#322;
+  opacity: 0.5;
+}
+
+.active{
+opacity: 1.0 !important;
+  -webkit-box-shadow: inset -0px 1px 3px 0px rgba(11,11,11,0.9);
+  -moz-box-shadow: inset -0px 1px 3px 0px rgba(11,11,11,0.9);
+  box-shadow: inset -0px 1px 3px 0px rgba(11,11,11,0.9);
+  //height: 40px;
+  //border-bottom: dotted 1px #777;
+  color:#aaa;
+  background: #fff !important;
+  color:#000 !important;
+}
+
+
+
+
+.LIST>div:hover{
+  background: red;
+}
+
+
+
+
+
+
+
+#hist1{
+  background: green;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+/**
+ *Mem
+ */
+
+    #mem1 {
+      background: green;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 50px;
+    }
+
+    ul1 {
+      background: #f99;
+      border: dashed;
+    }
+
+    li1 {
+      border: dashed #8ff;
+      background: #ff9;
+      padding: 5px;
+      margin: 5px;
+      opacity: 0.1;
+    }
+
+    li1.activ1 {
+      opacity: 1;
+    }
+
+    li1.faint1 {
+      opacity: 0.5;
+      background: #ccc;
+      color: #777;
+    }
+
+    li1.hover,
+    li1:hover {
+      opacity: 1.0;
+      background: orange;
+    }
+
+    li1.click,
+    li:h {
+      opacity: 1.0;
+      background: orange;
+    }
+    /**
+ *Hist
+ */
+    /*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ui>li{
+  z-index:0;
+}
+
+#a-search-filter{
+  z-index:13;
+  opacity: 0.9;
+  /background: red;
+  width: 90%;
+  height: 30px;
+  position: fixed;
+  top: 20px;
+  left: 10px;
+}
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+#txt{}
+#a-list-of-items{
+  z-index:-123;
+  opacity:0;
+  height:100px;
+  width:100px;
+  overflow:hidden;
+//position: fixed;
+ right: 0;
+  background: red;
+}
+
+li{
+-webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+   -moz-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+     -o-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1.000);
+        transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1.000); /* easeInOutCubic */
+  }
+  /*
+li{
+
+  //opacity:1;
+  z-index:-10;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.zero{
+  background:#faa;
+  background: red;
+  //padding-left: 6px;
+  //height: 1px;
+  //border-top: dotted 0px #777;
+  //overflow: hidden;
+  //display: none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 0;
+}
+.full{
+  overflow: hidden;
+  height: 50px;
+  background: #ccc;
+  padding-left: 6px;
+  border-top: dotted 1px #777;
+}
+/* Make sure all child elements cover the title */
+  /*
+        body1 > * {
+            background-color: rgba(255, 255, 255, .8);
+            margin:0;
+            padding: 0.25em 1em;
+        }
+
+		/* clearfix */
+  /*
+		body > *:after {
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: " ";
+			clear: both;
+			height: 0;
+		}
+
+        body {
+          float: right;
+          width: 50% !important;
+          height: 50% !important;
+            color: #333;
+            font-family: sans-serif;
+            //margin: 4.5em auto;
+            width: 40em;
+        }
+
+
+        h1 {
+            color: rgba(0,0,0,0.8);
+            font-size: 2em;
+            height: 1.5em;
+            left: 0;
+            position: fixed;
+            text-align: center;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        h2 {
+            font-size: 120%;
+            font-weight: bold;
+            margin-left: -2em;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 100%;
+            margin: 1em 0 2px -1px;
+            width:100%;
+        }
