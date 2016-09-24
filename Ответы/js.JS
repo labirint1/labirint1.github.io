@@ -650,7 +650,7 @@ $(function () {
       steps: [
         {
           //element: '.qwe1',
-          intro: "<img class='helpScreen1' src='http://screen.fst.su/support/1E8IYMZ.png' alt=''>  Первым делом надо зажать одновременно две клавиши <span class='helpButton'>Ctrl</span> и <span class='helpButton'>F</span> в результате чего сверху или снизу появится строка поиска. Если уже нашли её то можно переходить к следующему шагу"
+          intro: "<img class='helpScreen1' src='//screen.fst.su/support/1E8IYMZ.png' alt=''>  Первым делом надо зажать одновременно две клавиши <span class='helpButton'>Ctrl</span> и <span class='helpButton'>F</span> в результате чего сверху или снизу появится строка поиска. Если уже нашли её то можно переходить к следующему шагу"
                   }, {
           //element: '.qwe2',
           intro: "Теперь следует вводить текст вопроса, дабы сэкономить время, можно вводить его не полностью, а выбрать ключевое словосочетание без знаков препинания и цифр, ибо не во всех вопросах поделившиеся ответами правильно поставили знаки, а цифры могли поставить как римские так и арабские. Для примера найдите ответ на следующий вопрос <span class='helpTxt'>Свое название этот камень получил благодаря реке на остро<span class='helpSelect'>ве Си</span>цилия.</span> Как видите, здесь уже подсвечены буквы которые надо вводить в строку поиска. Всего 4 буквы и ответ найден! введите их в троку поиска и переходите к следующему шагу",
@@ -777,7 +777,7 @@ function win() {
 
 function winShare() {
   var params = 'scrollbars=yes,location=no,status=no,toolbar=no,menubar=no,status=no,width=383,height=483,left=10,top=85';
-  window.open('http://vk.com/share.php?url=https://labirint1.github.io/ответы/', 'share', params);
+  window.open('//vk.com/share.php?url=https://labirint1.github.io/ответы/', 'share', params);
 }
 /**
  *notifi for close
