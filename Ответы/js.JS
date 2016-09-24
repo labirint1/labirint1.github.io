@@ -485,7 +485,7 @@ $(function () {
     pageDescription: "Не знаешь как решить? Хочешь  быстрее? Тогда тебе сюда, тренируйся и решай быстрее всех! ",
     text: "Пыщ пыщ ололо",
     pageUrl: "vk.com/app4332469",
-    pageImage: "http://screen.fst.su/support/14GSJN3.png",
+    pageImage: "//labirint1.github.io/OLD/14GSJN3.png",
   }, 429);
   /**
    *pluso
