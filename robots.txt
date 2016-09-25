@@ -1,7 +1,9 @@
 User-agent: Yandex
 Disallow:
 Sitemap: https://labirint1.github.io/sitemap.txt
+Host: https://labirint1.github.io
 
 User-agent: *
 Disallow:
 Sitemap: https://labirint1.github.io/sitemap.txt
+Host: https://labirint1.github.io
