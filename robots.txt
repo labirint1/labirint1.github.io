@@ -1,5 +1,7 @@
 User-agent: Yandex
 Disallow:
+Sitemap: httр://mysite.com/sitemap.xml
 
 User-agent: *
 Disallow:
+Sitemap: httр://mysite.com/sitemap.xml
