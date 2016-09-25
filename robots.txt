@@ -1,7 +1,7 @@
 User-agent: Yandex
 Disallow:
-Sitemap: httр://mysite.com/sitemap.xml
+Sitemap: https://labirint1.github.io/sitemap.txt
 
 User-agent: *
 Disallow:
-Sitemap: httр://mysite.com/sitemap.xml
+Sitemap: https://labirint1.github.io/sitemap.txt
